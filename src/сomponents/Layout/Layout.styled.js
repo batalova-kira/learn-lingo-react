@@ -14,23 +14,27 @@ export const Header = styled.header`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: none;
-
-    /* font-family: var(--font-family); */
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.43;
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 34px;
+    line-height: 36px;
+    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-    background: #3470ff;
-    transition-duration: 0.4s;
+    color: #121417;
+    letter-spacing: 0.1em;
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 10px;
+    position: relative;
+    text-decoration: none;
+
+    transition: all 0.3s linear;
 
     &:hover {
         cursor: pointer;
-        background: #fff;
-        color: #0b44cd;
-        box-shadow: 0px 2px 5px 3px #97b1bf;
+        background: #e0a39a;
+        color: #fff;
+        /* box-shadow: 0px 2px 5px 3px #97b1bf; */
     }
 `;

@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));
-const Catalog = lazy(() => import("../../pages/Catalog"));
+const Teachers = lazy(() => import("../../pages/Teachers"));
 const Favorites = lazy(() => import("../../pages/Favorites"));
 
 export const App = () => {
@@ -14,7 +14,7 @@ export const App = () => {
             <Suspense fallback={<p>Loading..</p>}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/teachers" element={<Teachers />} />
                     <Route path="/favorites" element={<Favorites />} />
                     {/* <Route path="/posts/:postId/*" element={<PostDetails />} /> */}
                     <Route path="*" element={<Navigate to="/" />} />
