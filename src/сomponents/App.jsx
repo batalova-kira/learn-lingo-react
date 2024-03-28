@@ -7,6 +7,8 @@ import Layout from "./Layout/Layout";
 const HomePage = lazy(() => import("../../pages/HomePage"));
 const Teachers = lazy(() => import("../../pages/Teachers"));
 const Favorites = lazy(() => import("../../pages/Favorites"));
+const Login = lazy(() => import("../../pages/LoginPage"));
+const Registration = lazy(() => import("../../pages/RegisterPage"));
 
 export const App = () => {
     return (
@@ -16,6 +18,8 @@ export const App = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/teachers" element={<Teachers />} />
                     <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/registration" element={<Registration />} />
                     {/* <Route path="/posts/:postId/*" element={<PostDetails />} /> */}
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>

@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import {
     persistStore,
-    persistReducer,
+    // persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
@@ -10,18 +10,19 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+// import storage from "redux-persist/lib/storage";
+import { userReducer } from "./user/userSlice";
 
-const carsConfig = {
-    key: "cars",
-    storage,
-    whitelist: ["favorite"],
-    // blacklist: ['isLoading', 'error'],
-};
+// const userConfig = {
+//     key: "user",
+//     storage,
+//     whitelist: ["favorite"],
+//     // blacklist: ['isLoading', 'error'],
+// };
 
 export const store = configureStore({
     reducer: {
-        // cars: persistReducer(carsConfig, carsReducer),
+        user: userReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
