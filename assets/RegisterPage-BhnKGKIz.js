@@ -1,1 +1,0 @@
-import{j as e,N as n}from"./index-KY0DlcFl.js";const s=()=>e.jsxs(e.Fragment,{children:[e.jsx("h2",{children:"RegisterPage"}),e.jsxs("p",{children:["Already have an account? ",e.jsx(n,{to:"/login",children:"Sign in"})]})]});export{s as default};
