@@ -1,0 +1,1 @@
+import{j as r,N as s}from"./index-KY0DlcFl.js";const i=()=>r.jsxs(r.Fragment,{children:[r.jsx("h2",{children:"LoginPage"}),r.jsxs("p",{children:["Or ",r.jsx(s,{to:"/registration",children:"Registration"})]})]});export{i as default};
