@@ -1,17 +1,66 @@
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { Form } from "../Form/Form";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { setUser } from "../../../redux/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
-import React from "react";
-
-export const SignUp = () => {
+export const SignUpForm = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const dispatch = useDispatch();
-    const handleRegistration = (email, password) => {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(console.log)
-            .catch(console.error);
+    const navigateTo = useNavigate();
+
+    const handleRegistration = async (e) => {
+        e.preventDefault();
+        try {
+            const auth = getAuth();
+            const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+            const user = userCredential.user;
+            await updateProfile(user, { displayName: name });
+            console.log(user);
+            dispatch(setUser({ name: name, email: user.email, uid: user.uid }));
+            navigateTo("/");
+        } catch (error) {
+            console.error("Error registering user:", error);
+        }
     };
 
-    return <Form title="Registration" handleClick={handleRegistration} />;
+    return (
+        <form onSubmit={handleRegistration}>
+            <div>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    placeholder="Name"
+                />
+            </div>
+            <div>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="Email"
+                />
+            </div>
+            <div>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="Password"
+                />
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    );
 };
