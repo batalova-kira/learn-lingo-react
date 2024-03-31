@@ -23,8 +23,16 @@ export const SignUpForm = () => {
             );
             const user = userCredential.user;
             await updateProfile(user, { displayName: name });
-            console.log(user);
-            dispatch(setUser({ name: name, email: user.email, uid: user.uid }));
+
+            dispatch(
+                setUser({
+                    name: user.displayName,
+                    email: user.email,
+                    id: user.uid,
+                    token: user.accessToken,
+                })
+            );
+
             navigateTo("/");
         } catch (error) {
             console.error("Error registering user:", error);

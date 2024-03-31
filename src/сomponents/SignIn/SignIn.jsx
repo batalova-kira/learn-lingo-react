@@ -1,17 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // import { app } from "../../firebase";
-import { Form } from "../Form/Form";
+import { useNavigate } from "react-router-dom";
+import { setUser } from "../../../redux/user/userSlice";
 
 export const SignIn = () => {
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
     const dispatch = useDispatch();
-    const handleSignIn = (email, password) => {
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(console.log)
-            .catch(console.error);
+    const navigateTo = useNavigate();
+    // const { isAuth, name } = useAuth();
+    // console.log(name);
+    // console.log(isAuth);
+
+    const onSubmitSignIn = async (e) => {
+        e.preventDefault();
+        try {
+            const auth = getAuth();
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                pass
+            );
+            const user = userCredential.user;
+            console.log(user);
+            dispatch(
+                setUser({
+                    name: user.displayName,
+                    email: user.email,
+                    id: user.uid,
+                    token: user.accessToken,
+                })
+            );
+            navigateTo("/");
+        } catch (error) {
+            console.error("Error registering user:", error);
+        }
     };
 
-    return <Form title="Log In" handleClick={handleSignIn} />;
+    return (
+        <form onSubmit={onSubmitSignIn}>
+            <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+            />
+            <input
+                type="password"
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+                placeholder="Password"
+            />
+            <button type="submit">Sign In</button>
+        </form>
+    );
 };

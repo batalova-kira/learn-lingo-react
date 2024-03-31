@@ -7,7 +7,18 @@ import {
     StyledNavLink,
 } from "./Layout.styled";
 
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "../../../redux/user/userSlice";
+import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
+
 const Layout = ({ children }) => {
+    const isAuth = useSelector(isAuthenticated);
+    const dispatch = useDispatch();
+    const user = useSelector(selectUser);
+    const handleLogout = () => {
+        dispatch(removeUser());
+    };
+
     return (
         <Container>
             <Header>
@@ -23,7 +34,15 @@ const Layout = ({ children }) => {
                     </StyledNavLink>
                 </PagesWrapper>
                 <AuthWrapper>
-                    <StyledNavLink to="/login">Login</StyledNavLink>
+                    {isAuth ? (
+                        <button onClick={handleLogout}>
+                            Log Out {user.name}
+                        </button>
+                    ) : (
+                        <>
+                            <StyledNavLink to="/login">Login</StyledNavLink>
+                        </>
+                    )}
                     <StyledNavLink to="/registration">
                         Registration
                     </StyledNavLink>
