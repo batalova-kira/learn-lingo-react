@@ -4,22 +4,19 @@ import { app } from "../src/firebase";
 
 const HomePage = () => {
     useEffect(() => {
-        const db = getDatabase(app); // Отримуємо посилання на базу даних
+        const db = getDatabase(app);
 
-        const dbRef = ref(db); // Отримуємо посилання на кореневий вузол бази даних
+        const dbRef = ref(db);
 
-        // Додаємо прослуховувач подій для отримання оновлень усіх даних з кореневого вузла бази даних
         const unsubscribe = onValue(dbRef, (snapshot) => {
             const data = snapshot.val();
             console.log("Updated data:", data);
-            // Оновлення стану компонента або виконання інших дій з отриманими даними
         });
 
-        // При необхідності можна повернути функцію очищення для відписки від прослуховувача
         return () => {
             unsubscribe();
         };
-    }, []); // Передавайте пустий масив, щоб ефект запускався лише після монтування компонента
+    }, []);
 
     return (
         <>
