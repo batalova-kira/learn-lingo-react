@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import { Navigate } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
+import "./../firebase";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));
 const Teachers = lazy(() => import("../../pages/Teachers"));
