@@ -10,13 +10,19 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../../../redux/user/userSlice";
 import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
+import { openModal } from "../../../redux/modal/modalSlice";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
+
     const handleLogout = () => {
         dispatch(removeUser());
+    };
+
+    const handleLoginClick = () => {
+        dispatch(openModal());
     };
 
     return (
@@ -40,7 +46,12 @@ const Layout = ({ children }) => {
                         </button>
                     ) : (
                         <>
-                            <StyledNavLink to="/login">Login</StyledNavLink>
+                            <StyledNavLink
+                                to="/login"
+                                onClick={handleLoginClick}
+                            >
+                                Login
+                            </StyledNavLink>
                         </>
                     )}
                     <StyledNavLink to="/registration">

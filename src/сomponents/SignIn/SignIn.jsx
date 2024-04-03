@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import { app } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../../redux/user/userSlice";
 
@@ -10,9 +9,6 @@ export const SignIn = () => {
     const [pass, setPass] = useState("");
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
-    // const { isAuth, name } = useAuth();
-    // console.log(name);
-    // console.log(isAuth);
 
     const onSubmitSignIn = async (e) => {
         e.preventDefault();

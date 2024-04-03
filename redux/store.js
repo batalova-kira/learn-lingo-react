@@ -12,6 +12,7 @@ import {
 } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 import { userReducer } from "./user/userSlice";
+import { modalReducer } from "./modal/modalSlice";
 
 // const userConfig = {
 //     key: "user",
@@ -23,6 +24,7 @@ import { userReducer } from "./user/userSlice";
 export const store = configureStore({
     reducer: {
         user: userReducer,
+        modal: modalReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
