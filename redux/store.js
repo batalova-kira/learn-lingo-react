@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import {
     persistStore,
-    // persistReducer,
+    persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
@@ -10,20 +10,20 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage";
 import { userReducer } from "./user/userSlice";
 import { modalReducer } from "./modal/modalSlice";
 
-// const userConfig = {
-//     key: "user",
-//     storage,
-//     whitelist: ["favorite"],
-//     // blacklist: ['isLoading', 'error'],
-// };
+const userConfig = {
+    key: "user",
+    storage,
+    whitelist: ["token"],
+    // blacklist: ['isLoading', 'error'],
+};
 
 export const store = configureStore({
     reducer: {
-        user: userReducer,
+        user: persistReducer(userConfig, userReducer),
         modal: modalReducer,
     },
     middleware: (getDefaultMiddleware) =>

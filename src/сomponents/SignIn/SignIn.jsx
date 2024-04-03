@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { setUser } from "../../../redux/user/userSlice";
+
 
 export const SignIn = () => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
-
+    
     const onSubmitSignIn = async (e) => {
         e.preventDefault();
         try {
@@ -29,6 +30,7 @@ export const SignIn = () => {
                     token: user.accessToken,
                 })
             );
+
             navigateTo("/");
         } catch (error) {
             console.error("Error registering user:", error);
@@ -36,20 +38,25 @@ export const SignIn = () => {
     };
 
     return (
-        <form onSubmit={onSubmitSignIn}>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-            />
-            <input
-                type="password"
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-                placeholder="Password"
-            />
-            <button type="submit">Sign In</button>
-        </form>
+        <>
+            <form onSubmit={onSubmitSignIn}>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                />
+                <input
+                    type="password"
+                    value={pass}
+                    onChange={(e) => setPass(e.target.value)}
+                    placeholder="Password"
+                />
+                <button type="submit">Sign In</button>
+            </form>
+            <p>
+                or <NavLink to="/registration">Registration</NavLink>
+            </p>
+        </>
     );
 };

@@ -1,2 +1,2 @@
 export const selectUser = (state) => state.user;
-export const isAuthenticated = (state) => !!state.user.id;
+export const isAuthenticated = (state) => state.user.isAuthenticated;

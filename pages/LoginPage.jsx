@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom/dist";
 
 import SignInModal from "../src/сomponents/SignInModal/SignInModal";
 import { useSelector } from "react-redux";
@@ -11,9 +10,6 @@ const LoginPage = () => {
     return (
         <>
             <SignInModal isOpen={isOpenModal} />
-            <p>
-                Or <NavLink to="/registration">Registration</NavLink>
-            </p>
         </>
     );
 };
