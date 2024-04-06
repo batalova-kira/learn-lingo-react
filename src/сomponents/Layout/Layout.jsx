@@ -11,6 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../../../redux/user/userSlice";
 import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
 import { openModal } from "../../../redux/modal/modalSlice";
+import {
+    FAVORITE_ROUTE,
+    HOME_ROUTE,
+    LOGIN_ROUTE,
+    REGISTRATION_ROUTE,
+    TEACHERS_ROUTE,
+} from "../../constants/routes";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);
@@ -29,13 +36,13 @@ const Layout = ({ children }) => {
         <Container>
             <Header>
                 <PagesWrapper>
-                    <StyledNavLink className="header-link" to="/">
+                    <StyledNavLink className="header-link" to={HOME_ROUTE}>
                         Home
                     </StyledNavLink>
-                    <StyledNavLink className="header-link" to="/teachers">
+                    <StyledNavLink className="header-link" to={TEACHERS_ROUTE}>
                         Teachers
                     </StyledNavLink>
-                    <StyledNavLink className="header-link" to="/favorites">
+                    <StyledNavLink className="header-link" to={FAVORITE_ROUTE}>
                         Favorites
                     </StyledNavLink>
                 </PagesWrapper>
@@ -47,14 +54,14 @@ const Layout = ({ children }) => {
                     ) : (
                         <>
                             <StyledNavLink
-                                to="/login"
+                                to={LOGIN_ROUTE}
                                 onClick={handleLoginClick}
                             >
                                 Login
                             </StyledNavLink>
                         </>
                     )}
-                    <StyledNavLink to="/registration">
+                    <StyledNavLink to={REGISTRATION_ROUTE}>
                         Registration
                     </StyledNavLink>
                 </AuthWrapper>
