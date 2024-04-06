@@ -1,14 +1,15 @@
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { isAuthenticated } from "../../redux/user/selectors";
+import { LOGIN_ROUTE } from "../constants/routes";
 
-const PrivateRoute = ({ element, fallback, ...props }) => {
+const PrivateRoute = ({ children, navigateTo = LOGIN_ROUTE }) => {
     const isAuthenticatedUser = useSelector(isAuthenticated);
 
     return isAuthenticatedUser ? (
-        <Route {...props} element={element} />
+        children
     ) : (
-        <Navigate to={fallback} />
+        <Navigate to={navigateTo} replace />
     );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { getAuth } from "firebase/auth";
-import { setUser } from "../../../redux/user/userSlice";
+import { setUser, setToken } from "../../../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export const SignUpForm = () => {
@@ -23,6 +23,8 @@ export const SignUpForm = () => {
             );
             const user = userCredential.user;
             await updateProfile(user, { displayName: name });
+
+            dispatch(setToken(user.accessToken));
 
             dispatch(
                 setUser({

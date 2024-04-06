@@ -42,9 +42,14 @@ const Layout = ({ children }) => {
                     <StyledNavLink className="header-link" to={TEACHERS_ROUTE}>
                         Teachers
                     </StyledNavLink>
-                    <StyledNavLink className="header-link" to={FAVORITE_ROUTE}>
-                        Favorites
-                    </StyledNavLink>
+                    {isAuth && (
+                        <StyledNavLink
+                            className="header-link"
+                            to={FAVORITE_ROUTE}
+                        >
+                            Favorites
+                        </StyledNavLink>
+                    )}
                 </PagesWrapper>
                 <AuthWrapper>
                     {isAuth ? (

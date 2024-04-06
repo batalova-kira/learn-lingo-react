@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
-import { setUser } from "../../../redux/user/userSlice";
+import { setUser, setToken } from "../../../redux/user/userSlice";
 import { REGISTRATION_ROUTE } from "../../constants/routes";
-
 
 export const SignIn = () => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
-    
+
     const onSubmitSignIn = async (e) => {
         e.preventDefault();
         try {
@@ -23,6 +22,7 @@ export const SignIn = () => {
             );
             const user = userCredential.user;
             console.log(user);
+            dispatch(setToken(user.accessToken));
             dispatch(
                 setUser({
                     name: user.displayName,

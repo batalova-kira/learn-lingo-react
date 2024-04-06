@@ -6,6 +6,7 @@ import Layout from "./Layout/Layout";
 import * as ROUTES from "../constants/routes.js";
 import "./../firebase";
 import RestrictedRoute from "./RestrictedRoute.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));
 const Teachers = lazy(() => import("../../pages/Teachers"));
@@ -24,7 +25,11 @@ export const appRoutes = [
     },
     {
         path: ROUTES.FAVORITE_ROUTE,
-        element: <Favorites />,
+        element: (
+            <PrivateRoute>
+                <Favorites />
+            </PrivateRoute>
+        ),
     },
     {
         path: ROUTES.LOGIN_ROUTE,

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-
+import storage from "redux-persist/lib/storage";
 import {
     persistStore,
     persistReducer,
@@ -10,14 +10,14 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+
 import { userReducer } from "./user/userSlice";
 import { modalReducer } from "./modal/modalSlice";
 
 const userConfig = {
     key: "user",
     storage,
-    whitelist: ["token"],
+    // whitelist: ["token"],
     // blacklist: ['isLoading', 'error'],
 };
 
