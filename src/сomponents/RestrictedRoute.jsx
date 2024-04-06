@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 import { isAuthenticated } from "../../redux/user/selectors";
-import { Navigate, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { TEACHERS_ROUTE } from "../constants/routes";
 
-const RestrictedRoute = ({ element, allowed, fallback }) => {
+const RestrictedRoute = ({ children, navigateTo = TEACHERS_ROUTE }) => {
     const isAuthenticatedUser = useSelector(isAuthenticated);
 
     return isAuthenticatedUser ? (
-        <Route element={element} />
+        <Navigate to={navigateTo} replace />
     ) : (
-        <Navigate to={fallback} />
+        children
     );
 };
 

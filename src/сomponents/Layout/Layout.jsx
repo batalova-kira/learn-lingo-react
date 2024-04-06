@@ -61,7 +61,10 @@ const Layout = ({ children }) => {
                             </StyledNavLink>
                         </>
                     )}
-                    <StyledNavLink to={REGISTRATION_ROUTE}>
+                    <StyledNavLink
+                        to={REGISTRATION_ROUTE}
+                        onClick={handleLoginClick}
+                    >
                         Registration
                     </StyledNavLink>
                 </AuthWrapper>

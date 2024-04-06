@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import * as ROUTES from "../constants/routes.js";
 import "./../firebase";
+import RestrictedRoute from "./RestrictedRoute.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));
 const Teachers = lazy(() => import("../../pages/Teachers"));
@@ -27,11 +28,19 @@ export const appRoutes = [
     },
     {
         path: ROUTES.LOGIN_ROUTE,
-        element: <Login />,
+        element: (
+            <RestrictedRoute>
+                <Login />
+            </RestrictedRoute>
+        ),
     },
     {
         path: ROUTES.REGISTRATION_ROUTE,
-        element: <Registration />,
+        element: (
+            <RestrictedRoute>
+                <Registration />
+            </RestrictedRoute>
+        ),
     },
 ];
 

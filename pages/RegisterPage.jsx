@@ -1,15 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom/dist";
-import { SignUpForm } from "../src/сomponents/SignUp/SignUp";
+
+import { useSelector } from "react-redux";
+
+import { selectIsOpenModal } from "../redux/modal/modalSelectors";
+import { SignUpModal } from "../src/сomponents/SignUpModal/SignUpModal";
 
 const RegisterPage = () => {
+    const isOpenModal = useSelector(selectIsOpenModal);
+    console.log(isOpenModal);
     return (
         <>
-            <h2>RegisterPage</h2>
-            <SignUpForm />
-            <p>
-                Already have an account? <NavLink to="/login">Sign in</NavLink>
-            </p>
+            <SignUpModal isOpen={isOpenModal} />
         </>
     );
 };

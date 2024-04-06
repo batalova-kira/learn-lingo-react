@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setUser } from "../../../redux/user/userSlice";
+import { REGISTRATION_ROUTE } from "../../constants/routes";
 
 
 export const SignIn = () => {
@@ -55,7 +56,7 @@ export const SignIn = () => {
                 <button type="submit">Sign In</button>
             </form>
             <p>
-                or <NavLink to="/registration">Registration</NavLink>
+                or <NavLink to={REGISTRATION_ROUTE}>Registration</NavLink>
             </p>
         </>
     );
