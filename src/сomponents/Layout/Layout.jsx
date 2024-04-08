@@ -3,6 +3,7 @@ import {
     AuthWrapper,
     Container,
     Header,
+    LogoWrapper,
     PagesWrapper,
     StyledNavLink,
 } from "./Layout.styled";
@@ -35,6 +36,11 @@ const Layout = ({ children }) => {
     return (
         <Container>
             <Header>
+                {/* <LogoWrapper>
+                    <svg>
+                        <use href="assets/sprite.svg#icon-ukraine" />
+                    </svg>
+                </LogoWrapper> */}
                 <PagesWrapper>
                     <StyledNavLink className="header-link" to={HOME_ROUTE}>
                         Home

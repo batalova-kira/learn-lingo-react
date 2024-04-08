@@ -45,3 +45,5 @@ export const AuthWrapper = styled.div`
     margin-left: auto;
     gap: 14px;
 `;
+
+export const LogoWrapper = styled.div``;
