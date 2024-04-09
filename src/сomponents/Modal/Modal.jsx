@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { closeModal } from "../../../redux/modal/modalSlice";
 import { useEffect } from "react";
 // import { selectModalData } from "../../../redux/modal/modalSelectors";
-import { StyledModal } from "./Modal.styled";
+import { BtnClose, StyledModal } from "./Modal.styled";
 
 const ModalWrapper = ({ title, isOpen, children }) => {
     const dispatch = useDispatch();
@@ -36,13 +36,7 @@ const ModalWrapper = ({ title, isOpen, children }) => {
         isOpen && (
             <StyledModal onClick={handleOverlayClick}>
                 <div className="modal">
-                    <button
-                        onClick={() => dispatch(closeModal())}
-                        className="closeBtn"
-                    >
-                        &times;
-                    </button>
-                    <h2>{title}</h2>
+                    <BtnClose onClick={() => dispatch(closeModal())} />
                     {children}
                 </div>
             </StyledModal>

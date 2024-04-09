@@ -45,7 +45,7 @@ export const StyledNavLink = styled(NavLink)`
 
     &:hover {
         cursor: pointer;
-        color: #e0a39a;
+        color: ${(p) => p.theme.colors.pink};
     }
 `;
 
