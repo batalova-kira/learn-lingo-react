@@ -1,13 +1,20 @@
 import React from "react";
 import {
     AuthWrapper,
+    BtnLogOut,
     Container,
     Header,
+    LogOutBtn,
+    LogoText,
     LogoWrapper,
+    NameText,
     PagesWrapper,
+    StyledAuthLink,
     StyledNavLink,
+    StyledRegistrationLink,
 } from "./Layout.styled";
-
+import IconUkraine from "../../assets/icons/ukraine.svg";
+import IconLogin from "../../assets/icons/login.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../../../redux/user/userSlice";
 import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
@@ -19,6 +26,7 @@ import {
     REGISTRATION_ROUTE,
     TEACHERS_ROUTE,
 } from "../../constants/routes";
+import { NavLink } from "react-router-dom";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);
@@ -36,11 +44,10 @@ const Layout = ({ children }) => {
     return (
         <Container>
             <Header>
-                {/* <LogoWrapper>
-                    <svg>
-                        <use href="assets/sprite.svg#icon-ukraine" />
-                    </svg>
-                </LogoWrapper> */}
+                <LogoWrapper>
+                    <img src={IconUkraine} alt="Ukraine" />
+                    <LogoText>LearnLingo</LogoText>
+                </LogoWrapper>
                 <PagesWrapper>
                     <StyledNavLink className="header-link" to={HOME_ROUTE}>
                         Home
@@ -52,6 +59,9 @@ const Layout = ({ children }) => {
                         <StyledNavLink
                             className="header-link"
                             to={FAVORITE_ROUTE}
+                            style={{
+                                display: isAuth ? "block" : "none",
+                            }}
                         >
                             Favorites
                         </StyledNavLink>
@@ -59,25 +69,27 @@ const Layout = ({ children }) => {
                 </PagesWrapper>
                 <AuthWrapper>
                     {isAuth ? (
-                        <button onClick={handleLogout}>
-                            Log Out {user.name}
-                        </button>
+                        <LogOutBtn onClick={handleLogout}>
+                            <BtnLogOut />
+                            Log Out <NameText>{user.name}</NameText>
+                        </LogOutBtn>
                     ) : (
                         <>
-                            <StyledNavLink
+                            <StyledAuthLink
                                 to={LOGIN_ROUTE}
                                 onClick={handleLoginClick}
                             >
-                                Login
-                            </StyledNavLink>
+                                <img src={IconLogin} alt="Log in" />
+                                Log in
+                            </StyledAuthLink>
                         </>
                     )}
-                    <StyledNavLink
+                    <StyledRegistrationLink
                         to={REGISTRATION_ROUTE}
                         onClick={handleLoginClick}
                     >
                         Registration
-                    </StyledNavLink>
+                    </StyledRegistrationLink>
                 </AuthWrapper>
             </Header>
             <main>{children}</main>

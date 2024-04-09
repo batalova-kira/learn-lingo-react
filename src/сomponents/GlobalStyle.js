@@ -2,6 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
 
 export const GlobalStyle = createGlobalStyle`
+
+:root {
+  --font-family: "Roboto", sans-serif;
+}
+
 html {
   box-sizing: border-box;
   width: 100vw;
