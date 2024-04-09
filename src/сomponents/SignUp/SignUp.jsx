@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { setUser, setToken } from "../../../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
+import { InputSignUp, SignBtn, WrapperInput } from "./SignUp.styled";
 
 export const SignUpForm = () => {
     const [name, setName] = useState("");
@@ -44,7 +45,7 @@ export const SignUpForm = () => {
     return (
         <form onSubmit={handleRegistration}>
             <div>
-                <input
+                <InputSignUp
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -53,7 +54,7 @@ export const SignUpForm = () => {
                 />
             </div>
             <div>
-                <input
+                <InputSignUp
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -61,16 +62,16 @@ export const SignUpForm = () => {
                     placeholder="Email"
                 />
             </div>
-            <div>
-                <input
+            <WrapperInput>
+                <InputSignUp
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Password"
                 />
-            </div>
-            <button type="submit">Sign Up</button>
+            </WrapperInput>
+            <SignBtn type="submit">Sign Up</SignBtn>
         </form>
     );
 };

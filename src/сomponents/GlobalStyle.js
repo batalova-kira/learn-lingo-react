@@ -22,10 +22,9 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: #212121;
-  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  color: ${(props) => props.theme.colors.black};
+  background: ${(props) => props.theme.colors.background};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

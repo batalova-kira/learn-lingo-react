@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 
 export const Container = styled.div`
-    max-width: 11840px;
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 1184px;
     padding: 20px 128px 0px 128px;
 `;
 
@@ -12,6 +14,7 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 20px;
 `;
 
 export const LogoWrapper = styled.div`
@@ -26,7 +29,7 @@ export const LogoText = styled.span`
     font-size: 20px;
     line-height: 120%;
     letter-spacing: -0.02em;
-    color: #121417;
+    color: ${(props) => props.theme.colors.black};
 `;
 
 export const PagesWrapper = styled.div`
@@ -40,7 +43,7 @@ export const StyledNavLink = styled(NavLink)`
     font-weight: 400;
     font-size: 16px;
     line-height: 125%;
-    color: #121417;
+    color: ${(props) => props.theme.colors.black};
     text-decoration: none;
 
     &:hover {
@@ -63,22 +66,20 @@ export const StyledAuthLink = styled(NavLink)`
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
-    color: #121417;
+    color: ${(props) => props.theme.colors.black};
     text-decoration: none;
 
     &:hover {
         cursor: pointer;
 
-        color: #e0a39a;
+        color: ${(props) => props.theme.colors.pink};
         border-radius: 5px;
     }
 `;
 export const StyledRegistrationLink = styled(NavLink)`
     border-radius: 12px;
     padding: 14px 39px;
-    width: 166px;
-    height: 48px;
-    background: #121417;
+    background: ${(props) => props.theme.colors.black};
     text-decoration: none;
     font-family: var(--font-family);
     font-weight: 700;
@@ -88,8 +89,8 @@ export const StyledRegistrationLink = styled(NavLink)`
 
     &:hover {
         cursor: pointer;
-        background: #e0a39a;
-        color: #fff;
+        background: ${(props) => props.theme.colors.pink};
+        color: ${(props) => props.theme.colors.background};
     }
 `;
 
@@ -103,17 +104,17 @@ export const LogOutBtn = styled.button`
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
-    color: #121417;
+    color: ${(props) => props.theme.colors.black};
     text-decoration: none;
 
     &:hover {
         cursor: pointer;
-        color: #e0a39a;
+        color: ${(props) => props.theme.colors.pink};
     }
 `;
 
 export const BtnLogOut = styled(BiLogOut)`
-    stroke: #e0a39a;
+    stroke: ${(props) => props.theme.colors.pink};
     font-size: 1.2rem;
     &:hover {
         cursor: pointer;

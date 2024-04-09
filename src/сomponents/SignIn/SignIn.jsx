@@ -4,6 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setUser, setToken } from "../../../redux/user/userSlice";
 import { REGISTRATION_ROUTE } from "../../constants/routes";
+import { InputSignUp, SignBtn, WrapperInput } from "../SignUp/SignUp.styled";
 
 export const SignIn = () => {
     const [email, setEmail] = useState("");
@@ -41,23 +42,26 @@ export const SignIn = () => {
     return (
         <>
             <form onSubmit={onSubmitSignIn}>
-                <input
+                <InputSignUp
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                 />
-                <input
-                    type="password"
-                    value={pass}
-                    onChange={(e) => setPass(e.target.value)}
-                    placeholder="Password"
-                />
-                <button type="submit">Sign In</button>
+                <WrapperInput>
+                    <InputSignUp
+                        type="password"
+                        value={pass}
+                        onChange={(e) => setPass(e.target.value)}
+                        placeholder="Password"
+                    />
+                </WrapperInput>
+
+                <SignBtn type="submit">Sign In</SignBtn>
             </form>
-            <p>
+            {/* <p>
                 or <NavLink to={REGISTRATION_ROUTE}>Registration</NavLink>
-            </p>
+            </p> */}
         </>
     );
 };

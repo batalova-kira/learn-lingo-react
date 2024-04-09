@@ -20,7 +20,7 @@ export const StyledModal = styled.div`
         max-width: 566px;
         width: 100%;
         min-height: 450px;
-        background-color: white;
+        background-color: ${(p) => p.theme.colors.background};
         border-radius: 30px;
         position: absolute;
         left: 50%;

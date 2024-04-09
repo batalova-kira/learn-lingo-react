@@ -7,6 +7,5 @@ export const TextModal = styled.p`
     font-weight: 400;
     font-size: 16px;
     line-height: 137%;
-    color: rgba(18, 20, 23, 0.8);
     color: ${(props) => props.theme.colors.modalBlack};
 `;

@@ -15,12 +15,14 @@ const theme = {
     colors: {
         background: "#fff",
         secondBackground: "#f8f8f8",
+        heroBackground: "#F2C0BD",
         darkPink: "#B03F3E",
         pink: "#E0A39A",
         black: "#121417",
         lightPink: "#DCAEA0",
         secondBlack: "rgba(18, 20, 23, 0.7)",
         modalBlack: "rgba(18, 20, 23, 0.8)",
+        borderBlack: "rgba(18, 20, 23, 0.1)",
     },
     // radii: {
     //     sm: "4px",

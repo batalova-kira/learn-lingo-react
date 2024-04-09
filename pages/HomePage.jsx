@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from "../src/firebase";
+import { Hero } from "../src/сomponents/Hero/Hero";
 
 const HomePage = () => {
     useEffect(() => {
@@ -20,7 +21,7 @@ const HomePage = () => {
 
     return (
         <>
-            <h2>Welcome</h2>
+            <Hero />
         </>
     );
 };

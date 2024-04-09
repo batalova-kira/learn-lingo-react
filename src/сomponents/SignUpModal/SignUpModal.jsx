@@ -15,10 +15,10 @@ export const SignUpModal = ({ isOpen }) => {
                 following information
             </TextModal>
             <SignUpForm />
-            <p>
+            {/* <p>
                 Already have an account?
                 <NavLink to={LOGIN_ROUTE}>Sign in</NavLink>
-            </p>
+            </p> */}
         </ModalWrapper>
     );
 };
