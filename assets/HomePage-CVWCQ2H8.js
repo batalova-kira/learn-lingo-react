@@ -1,0 +1,1 @@
+import{r as n,g as c,a as d,o as l,j as a,b as u}from"./index-xMJB31VZ.js";const b=()=>(n.useEffect(()=>{const e=c(u),s=d(e),t=l(s,o=>{const r=o.val();console.log("Updated data:",r)});return()=>{t()}},[]),a.jsx(a.Fragment,{children:a.jsx("h2",{children:"Welcome"})}));export{b as default};
