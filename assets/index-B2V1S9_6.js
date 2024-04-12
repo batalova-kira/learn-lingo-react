@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/LoginPage-CAjLNMQK.js","assets/modalSelectors-Ddp_bq6i.js","assets/RegisterPage-DtKK1uB5.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/LoginPage-C8hos6Qv.js","assets/modalSelectors-DGGNtOzc.js","assets/RegisterPage-2Vi6gjto.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -1773,7 +1773,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const t of t
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */function vR(e){pT(tT),Pl(new Is("database",(t,{instanceIdentifier:n})=>{const r=t.getProvider("app").getImmediate(),i=t.getProvider("auth-internal"),s=t.getProvider("app-check-internal");return hR(r,i,s,n)},"PUBLIC").setMultipleInstances(!0)),jr(cm,fm,e),jr(cm,fm,"esm2017")}Ut.prototype.simpleListen=function(e,t){this.sendRequest("q",{p:e},t)};Ut.prototype.echo=function(e,t){this.sendRequest("echo",{d:e},t)};vR();var mr={BASE_URL:"/learn-lingo-react/",MODE:"production",DEV:!1,PROD:!0,SSR:!1};const _R=mr.VITE_API_KEY,wR=mr.VITE_AUTH_DOMAIN,ER=mr.PROJECT_ID,SR=mr.VITE_STORAGE_BUCKET,CR=mr.VITE_MESSAGING_SENDER_ID,kR=mr.VITE_APP_ID,IR=mr.VITE_DATABASE_URL,xR={apiKey:_R,authDomain:wR,databaseURL:IR,projectId:ER,storageBucket:SR,messagingSenderId:CR,appId:kR},AO=D_(xR),Hm=({children:e,navigateTo:t=_d})=>wl(vd)?b.jsx(rd,{to:t,replace:!0}):e,TR=({children:e,navigateTo:t=wd})=>wl(vd)?e:b.jsx(rd,{to:t,replace:!0}),PR=x.lazy(()=>$s(()=>import("./HomePage-DpuPkOK7.js"),__vite__mapDeps([]))),NR=x.lazy(()=>$s(()=>import("./Teachers-BJJCSugJ.js"),__vite__mapDeps([]))),RR=x.lazy(()=>$s(()=>import("./Favorites-CAwbuAeg.js"),__vite__mapDeps([]))),OR=x.lazy(()=>$s(()=>import("./LoginPage-CAjLNMQK.js"),__vite__mapDeps([0,1]))),AR=x.lazy(()=>$s(()=>import("./RegisterPage-DtKK1uB5.js"),__vite__mapDeps([2,1]))),DR=[{path:g_,element:b.jsx(PR,{})},{path:_d,element:b.jsx(NR,{})},{path:y_,element:b.jsx(TR,{children:b.jsx(RR,{})})},{path:wd,element:b.jsx(Hm,{children:b.jsx(OR,{})})},{path:v_,element:b.jsx(Hm,{children:b.jsx(AR,{})})}],bR=()=>b.jsx(DI,{children:b.jsx(x.Suspense,{fallback:b.jsx("p",{children:"Loading.."}),children:b.jsxs(yS,{children:[DR.map(({path:e,element:t})=>b.jsx(_c,{path:e,element:t},e)),b.jsx(_c,{path:"*",element:b.jsx(rd,{to:"/"})})]})})}),MR=DC`
+ */function vR(e){pT(tT),Pl(new Is("database",(t,{instanceIdentifier:n})=>{const r=t.getProvider("app").getImmediate(),i=t.getProvider("auth-internal"),s=t.getProvider("app-check-internal");return hR(r,i,s,n)},"PUBLIC").setMultipleInstances(!0)),jr(cm,fm,e),jr(cm,fm,"esm2017")}Ut.prototype.simpleListen=function(e,t){this.sendRequest("q",{p:e},t)};Ut.prototype.echo=function(e,t){this.sendRequest("echo",{d:e},t)};vR();var mr={BASE_URL:"/learn-lingo-react/",MODE:"production",DEV:!1,PROD:!0,SSR:!1};const _R=mr.VITE_API_KEY,wR=mr.VITE_AUTH_DOMAIN,ER=mr.PROJECT_ID,SR=mr.VITE_STORAGE_BUCKET,CR=mr.VITE_MESSAGING_SENDER_ID,kR=mr.VITE_APP_ID,IR=mr.VITE_DATABASE_URL,xR={apiKey:_R,authDomain:wR,databaseURL:IR,projectId:ER,storageBucket:SR,messagingSenderId:CR,appId:kR},AO=D_(xR),Hm=({children:e,navigateTo:t=_d})=>wl(vd)?b.jsx(rd,{to:t,replace:!0}):e,TR=({children:e,navigateTo:t=wd})=>wl(vd)?e:b.jsx(rd,{to:t,replace:!0}),PR=x.lazy(()=>$s(()=>import("./HomePage-DNjCZqOw.js"),__vite__mapDeps([]))),NR=x.lazy(()=>$s(()=>import("./Teachers-DoI21QMe.js"),__vite__mapDeps([]))),RR=x.lazy(()=>$s(()=>import("./Favorites-DR4HQl36.js"),__vite__mapDeps([]))),OR=x.lazy(()=>$s(()=>import("./LoginPage-C8hos6Qv.js"),__vite__mapDeps([0,1]))),AR=x.lazy(()=>$s(()=>import("./RegisterPage-2Vi6gjto.js"),__vite__mapDeps([2,1]))),DR=[{path:g_,element:b.jsx(PR,{})},{path:_d,element:b.jsx(NR,{})},{path:y_,element:b.jsx(TR,{children:b.jsx(RR,{})})},{path:wd,element:b.jsx(Hm,{children:b.jsx(OR,{})})},{path:v_,element:b.jsx(Hm,{children:b.jsx(AR,{})})}],bR=()=>b.jsx(DI,{children:b.jsx(x.Suspense,{fallback:b.jsx("p",{children:"Loading.."}),children:b.jsxs(yS,{children:[DR.map(({path:e,element:t})=>b.jsx(_c,{path:e,element:t},e)),b.jsx(_c,{path:"*",element:b.jsx(rd,{to:"/"})})]})})}),MR=DC`
 
 :root {
   --font-family: "Roboto", sans-serif;
@@ -1794,7 +1794,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   color: ${e=>e.theme.colors.black};
   background: ${e=>e.theme.colors.background};
   -webkit-font-smoothing: antialiased;

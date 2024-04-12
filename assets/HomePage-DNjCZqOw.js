@@ -1,23 +1,23 @@
-import{u as o,j as t,r as s,g as c,a as l,o as d,b as p}from"./index-D2b96rGN.js";const g=o.div`
+import{u as o,j as t,r as s,g as c,a as l,o as d,b as g}from"./index-B2V1S9_6.js";const h=o.div`
     display: flex;
     gap: 24px;
-`,h=o.div`
+`,p=o.div`
     padding: 98px 108px 98px 64px;
     max-width: 720px;
+    max-height: 530px;
     margin-left: -64px;
 
     border-radius: 30px;
     background: ${e=>e.theme.colors.secondBackground};
 `,x=o.h1`
-    max-width: 548px;
+    width: 548px;
     margin-bottom: 32px;
 
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 48px;
-    line-height: 1.17;
+    line-height: 117%;
     letter-spacing: -0.02em;
-
     color: ${e=>e.theme.colors.black};
 `,u=o.span`
     font-style: italic;
@@ -57,11 +57,10 @@ import{u as o,j as t,r as s,g as c,a as l,o as d,b as p}from"./index-D2b96rGN.js
         background: ${e=>e.theme.colors.darkPink};
     }
 `,y=o.div`
-    position: relative;
     border-radius: 30px;
     max-width: 568px;
-    max-height: 530px;
+    /* max-height: 530px; */
     margin-right: -64px;
 
     background: ${e=>e.theme.colors.heroBackground};
-`,k="/learn-lingo-react/assets/girl-jRuYr3yu.svg",j=()=>t.jsx(t.Fragment,{children:t.jsxs(g,{children:[t.jsxs(h,{children:[t.jsxs(x,{children:["Unlock your potential with the best"," ",t.jsx(u,{children:"language"})," tutors"]}),t.jsx(m,{children:t.jsx(f,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),t.jsx(b,{children:"Get started"})]}),t.jsx(y,{children:t.jsx("img",{src:k,alt:"happy girl with laptop"})})]})}),v=()=>(s.useEffect(()=>{const e=c(p),r=l(e),n=d(r,a=>{const i=a.val();console.log("Updated data:",i)});return()=>{n()}},[]),t.jsx(t.Fragment,{children:t.jsx(j,{})}));export{v as default};
+`,k="/learn-lingo-react/assets/girl-jRuYr3yu.svg",j=()=>t.jsx(t.Fragment,{children:t.jsxs(h,{children:[t.jsxs(p,{children:[t.jsxs(x,{children:["Unlock your potential with the best"," ",t.jsx(u,{children:"language"})," tutors"]}),t.jsx(m,{children:t.jsx(f,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),t.jsx(b,{children:"Get started"})]}),t.jsx(y,{children:t.jsx("img",{src:k,alt:"happy girl with laptop"})})]})}),v=()=>(s.useEffect(()=>{const e=c(g),r=l(e),n=d(r,a=>{const i=a.val();console.log("Updated data:",i)});return()=>{n()}},[]),t.jsx(t.Fragment,{children:t.jsx(j,{})}));export{v as default};
