@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   color: ${(props) => props.theme.colors.black};
   background: ${(props) => props.theme.colors.background};
   -webkit-font-smoothing: antialiased;

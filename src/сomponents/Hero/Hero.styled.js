@@ -8,6 +8,7 @@ export const WrapperHero = styled.div`
 export const HeroLeft = styled.div`
     padding: 98px 108px 98px 64px;
     max-width: 720px;
+    max-height: 530px;
     margin-left: -64px;
 
     border-radius: 30px;
@@ -15,15 +16,14 @@ export const HeroLeft = styled.div`
 `;
 
 export const TitleHeroLeft = styled.h1`
-    max-width: 548px;
+    width: 548px;
     margin-bottom: 32px;
 
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 48px;
-    line-height: 1.17;
+    line-height: 117%;
     letter-spacing: -0.02em;
-
     color: ${(props) => props.theme.colors.black};
 `;
 
@@ -73,10 +73,9 @@ export const HeroBtn = styled.button`
 `;
 
 export const HeroRight = styled.div`
-    position: relative;
     border-radius: 30px;
     max-width: 568px;
-    max-height: 530px;
+    /* max-height: 530px; */
     margin-right: -64px;
 
     background: ${(props) => props.theme.colors.heroBackground};
