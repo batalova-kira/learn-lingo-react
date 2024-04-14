@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const WrapperHero = styled.div`
     display: flex;
     gap: 24px;
+    margin-bottom: 24px;
 `;
 
 export const HeroLeft = styled.div`
     padding: 98px 108px 98px 64px;
     max-width: 720px;
-    max-height: 530px;
+    /* max-height: 530px; */
     margin-left: -64px;
 
     border-radius: 30px;
@@ -16,11 +17,11 @@ export const HeroLeft = styled.div`
 `;
 
 export const TitleHeroLeft = styled.h1`
-    width: 548px;
+    max-width: 548px;
     margin-bottom: 32px;
 
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     font-size: 48px;
     line-height: 117%;
     letter-spacing: -0.02em;
@@ -29,7 +30,7 @@ export const TitleHeroLeft = styled.h1`
 
 export const HeroLeftAccent = styled.span`
     font-style: italic;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     border-radius: 8px;
     background: ${(props) => props.theme.colors.heroBackground};
 `;
@@ -43,9 +44,9 @@ export const TextHeroWrapper = styled.div`
 export const TextHeroLeft = styled.p`
     width: 100%;
     font-family: var(--font-family);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     font-size: 16px;
-    line-height: 137%;
+    line-height: 1.37;
     letter-spacing: -0.02em;
     color: ${(props) => props.theme.colors.black};
 `;
@@ -57,7 +58,7 @@ export const HeroBtn = styled.button`
     padding: 16px 88px;
 
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 18px;
     line-height: 1.56;
     color: ${(props) => props.theme.colors.black};
@@ -79,4 +80,41 @@ export const HeroRight = styled.div`
     margin-right: -64px;
 
     background: ${(props) => props.theme.colors.heroBackground};
+`;
+
+export const WrapperHeroBottom = styled.div`
+    display: flex;
+    gap: 100px;
+    padding: 40px 123px;
+    margin-right: -64px;
+    margin-left: -64px;
+    max-width: 1312px;
+    border: 1.5px dashed ${(props) => props.theme.colors.pink};
+    border-radius: 30px;
+`;
+
+export const WrapperDivBottom = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 16px;
+`;
+
+export const HeroBottomNumber = styled.p`
+    white-space: nowrap;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: 28px;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    color: ${(props) => props.theme.colors.black};
+`;
+
+export const HeroBottomText = styled.p`
+    max-width: 96px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: ${(props) => props.theme.colors.secondBlack};
 `;

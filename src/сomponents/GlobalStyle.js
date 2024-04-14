@@ -3,8 +3,13 @@ import "modern-normalize";
 
 export const GlobalStyle = createGlobalStyle`
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
   --font-family: "Roboto", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
   --primary-transition: 0.3s ease-in-out;
 }
 

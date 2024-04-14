@@ -1,5 +1,7 @@
 import React from "react";
 import {
+    HeroBottomNumber,
+    HeroBottomText,
     HeroBtn,
     HeroLeft,
     HeroLeftAccent,
@@ -7,7 +9,9 @@ import {
     TextHeroLeft,
     TextHeroWrapper,
     TitleHeroLeft,
+    WrapperDivBottom,
     WrapperHero,
+    WrapperHeroBottom,
 } from "./Hero.styled";
 import girl from "../../assets/icons/girl.svg";
 
@@ -34,6 +38,24 @@ export const Hero = () => {
                     <img src={girl} alt="happy girl with laptop" />
                 </HeroRight>
             </WrapperHero>
+            <WrapperHeroBottom>
+                <WrapperDivBottom>
+                    <HeroBottomNumber>32,000 +</HeroBottomNumber>
+                    <HeroBottomText>Experienced tutors</HeroBottomText>
+                </WrapperDivBottom>
+                <WrapperDivBottom>
+                    <HeroBottomNumber>300,000 +</HeroBottomNumber>
+                    <HeroBottomText>5-star tutor reviews</HeroBottomText>
+                </WrapperDivBottom>
+                <WrapperDivBottom>
+                    <HeroBottomNumber>120 +</HeroBottomNumber>
+                    <HeroBottomText>Subjects taught</HeroBottomText>
+                </WrapperDivBottom>
+                <WrapperDivBottom>
+                    <HeroBottomNumber>200 +</HeroBottomNumber>
+                    <HeroBottomText>Tutor nationalities</HeroBottomText>
+                </WrapperDivBottom>
+            </WrapperHeroBottom>
         </>
     );
 };
