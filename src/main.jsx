@@ -19,6 +19,7 @@ const theme = {
         pink: "#E0A39A",
         black: "#121417",
         lightPink: "#DCAEA0",
+        green: "#38CD3E",
         secondBlack: "rgba(18, 20, 23, 0.7)",
         modalBlack: "rgba(18, 20, 23, 0.8)",
         borderBlack: "rgba(18, 20, 23, 0.1)",

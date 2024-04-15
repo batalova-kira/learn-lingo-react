@@ -5,8 +5,9 @@ import { BiLogOut } from "react-icons/bi";
 export const Container = styled.div`
     margin: 0 auto;
     height: 100vh;
-    width: 1440px;
+    max-width: 1440px;
     padding: 20px 128px 0px 128px;
+    background: ${(props) => props.theme.colors.secondBackground};
 `;
 
 export const Header = styled.header`
