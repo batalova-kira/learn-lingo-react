@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const WrapperCard = styled.div`
     display: flex;
-    gap: 48px;
+    /* gap: 48px; */
 
     max-width: 1184px;
     padding: 24px;
@@ -12,7 +12,9 @@ export const WrapperCard = styled.div`
 `;
 
 export const WrapperAvatar = styled.div`
+    display: block;
     position: relative;
+    margin-right: 48px;
 `;
 
 export const Avatar = styled.img`

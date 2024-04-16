@@ -28,7 +28,7 @@ body {
   margin: 0;
   /* font-family: "Roboto", sans-serif; */
   color: ${(props) => props.theme.colors.black};
-  background: ${(props) => props.theme.colors.background};
+  background: ${(props) => props.theme.colors.secondBackground};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -83,12 +83,6 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 textarea {

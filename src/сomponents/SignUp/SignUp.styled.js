@@ -6,7 +6,7 @@ export const InputSignUp = styled.input`
     width: 100%;
 
     font-family: var(--font-family);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     font-size: 16px;
     line-height: 1.37;
 
@@ -36,7 +36,7 @@ export const SignBtn = styled.button`
     padding: 16px 0;
 
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 18px;
     line-height: 1.56;
 
