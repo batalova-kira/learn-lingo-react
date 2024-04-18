@@ -21,9 +21,11 @@ const theme = {
         lightPink: "#DCAEA0",
         green: "#38CD3E",
         grey: "#8a8a89",
+        yellow: "#ffc531",
         secondBlack: "rgba(18, 20, 23, 0.7)",
         modalBlack: "rgba(18, 20, 23, 0.8)",
         borderBlack: "rgba(18, 20, 23, 0.1)",
+        spanGrey: "rgba(18, 20, 23, 0.2)",
     },
     // radii: {
     //     sm: "4px",
