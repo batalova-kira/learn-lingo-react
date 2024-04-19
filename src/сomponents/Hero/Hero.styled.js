@@ -69,7 +69,7 @@ export const HeroBtn = styled.button`
 
     &:hover {
         cursor: pointer;
-        background: ${(p) => p.theme.colors.darkPink};
+        background: ${(p) => p.theme.colors.lightPink};
     }
 `;
 
@@ -89,7 +89,7 @@ export const WrapperHeroBottom = styled.div`
     margin-right: -64px;
     margin-left: -64px;
     max-width: 1312px;
-    border: 1.5px dashed ${(props) => props.theme.colors.pink};
+    border: 2px dashed ${(props) => props.theme.colors.pink};
     border-radius: 30px;
 `;
 

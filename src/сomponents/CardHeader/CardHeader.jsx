@@ -15,6 +15,7 @@ import {
 } from "./CardHeader.styled";
 import IconBook from "../../assets/icons/book.svg";
 import IconStar from "../../assets/icons/start.svg";
+import { CardDescription } from "../CardDescription/CardDescription";
 
 export const CardHeader = ({ item }) => {
     const { name, surname, lessons_done, rating, price_per_hour } = item;
@@ -45,7 +46,7 @@ export const CardHeader = ({ item }) => {
             <HeaderName>
                 {name} {surname}
             </HeaderName>
-            <div>Description</div>
+            <CardDescription item={item} />
         </WrapperHeaderDesc>
     );
 };

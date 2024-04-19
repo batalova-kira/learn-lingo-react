@@ -3,7 +3,6 @@ import "modern-normalize";
 
 export const GlobalStyle = createGlobalStyle`
 
-
 :root {
   --font-family: "Roboto", sans-serif;
   --font-weight-medium: 500;
