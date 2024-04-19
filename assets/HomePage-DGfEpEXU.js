@@ -1,4 +1,4 @@
-import{u as r,j as e}from"./index-CH1r2Xqn.js";const a=r.div`
+import{u as r,j as e}from"./index-D8CHWfbN.js";const a=r.div`
     display: flex;
     gap: 24px;
     margin-bottom: 24px;
@@ -55,7 +55,7 @@ import{u as r,j as e}from"./index-CH1r2Xqn.js";const a=r.div`
 
     &:hover {
         cursor: pointer;
-        background: ${t=>t.theme.colors.darkPink};
+        background: ${t=>t.theme.colors.lightPink};
     }
 `,d=r.div`
     border-radius: 30px;
@@ -71,7 +71,7 @@ import{u as r,j as e}from"./index-CH1r2Xqn.js";const a=r.div`
     margin-right: -64px;
     margin-left: -64px;
     max-width: 1312px;
-    border: 1.5px dashed ${t=>t.theme.colors.pink};
+    border: 2px dashed ${t=>t.theme.colors.pink};
     border-radius: 30px;
 `,o=r.div`
     display: flex;
