@@ -6,11 +6,10 @@ const initialState = {
 };
 
 const modalSlice = createSlice({
-    
     name: "modal",
 
     initialState,
-    
+
     reducers: {
         openModal: (state, { payload }) => {
             state.isOpenModal = true;

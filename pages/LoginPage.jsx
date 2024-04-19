@@ -6,7 +6,7 @@ import { selectIsOpenModal } from "../redux/modal/modalSelectors";
 
 const LoginPage = () => {
     const isOpenModal = useSelector(selectIsOpenModal);
-    console.log(isOpenModal);
+
     return (
         <>
             <SignInModal isOpen={isOpenModal} />

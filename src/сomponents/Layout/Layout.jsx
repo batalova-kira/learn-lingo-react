@@ -26,7 +26,6 @@ import {
     REGISTRATION_ROUTE,
     TEACHERS_ROUTE,
 } from "../../constants/routes";
-import { NavLink } from "react-router-dom";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);

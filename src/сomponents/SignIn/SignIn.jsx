@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { setUser, setToken } from "../../../redux/user/userSlice";
-import { REGISTRATION_ROUTE } from "../../constants/routes";
 import { InputSignUp, SignBtn, WrapperInput } from "../SignUp/SignUp.styled";
 
 export const SignIn = () => {
@@ -59,9 +58,6 @@ export const SignIn = () => {
 
                 <SignBtn type="submit">Sign In</SignBtn>
             </form>
-            {/* <p>
-                or <NavLink to={REGISTRATION_ROUTE}>Registration</NavLink>
-            </p> */}
         </>
     );
 };

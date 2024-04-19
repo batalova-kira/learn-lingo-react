@@ -64,7 +64,6 @@ export const BtnLevel = styled.button`
 `;
 
 export const BtnBookLesson = styled.button`
-    /* display: block; */
     padding: 16px 48px;
 
     font-family: var(--font-family);
