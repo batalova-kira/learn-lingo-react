@@ -3,6 +3,7 @@ import {
     HeaderLanguages,
     HeaderName,
     HeartBtn,
+    HeartFullIcon,
     HeartIcon,
     TitleIcon,
     TitleSpan,
@@ -16,9 +17,17 @@ import {
 import IconBook from "../../assets/icons/book.svg";
 import IconStar from "../../assets/icons/start.svg";
 import { CardDescription } from "../CardDescription/CardDescription";
+import { useDispatch } from "react-redux";
+import { toggleFavorite } from "../../../redux/user/userSlice";
 
-export const CardHeader = ({ item }) => {
+export const CardHeader = ({ item, isFavorite }) => {
     const { name, surname, lessons_done, rating, price_per_hour } = item;
+    const dispatch = useDispatch();
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        dispatch(toggleFavorite(item));
+    };
     return (
         <WrapperHeaderDesc>
             <WrapperHeaderCard>
@@ -38,8 +47,8 @@ export const CardHeader = ({ item }) => {
                         Price / 1 hour:{" "}
                         <TitleSpanAccent>{price_per_hour}$</TitleSpanAccent>
                     </TitleText>
-                    <HeartBtn type="button">
-                        <HeartIcon />
+                    <HeartBtn type="button" onClick={handleClick}>
+                        {isFavorite ? <HeartFullIcon /> : <HeartIcon />}
                     </HeartBtn>
                 </WrapperTitle>
             </WrapperHeaderCard>

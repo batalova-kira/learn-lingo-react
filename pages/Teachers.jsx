@@ -3,10 +3,13 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from "../src/firebase";
 import { TeacherCard } from "../src/сomponents/TeacherCard/TeacherCard";
 import { BtnMainLoadMore, TeachersList } from "./Teachers.styled";
+import { selectFavoriteTeachers } from "../redux/user/selectors";
+import { useSelector } from "react-redux";
 
 const Teachers = () => {
     const [teachers, setTeachers] = useState([]);
     const [displayedTeachers, setDisplayedTeachers] = useState(4);
+    const favoriteTeachers = useSelector(selectFavoriteTeachers);
 
     useEffect(() => {
         const db = getDatabase(app);
@@ -36,7 +39,12 @@ const Teachers = () => {
             <TeachersList>
                 {teachers.slice(0, displayedTeachers).map((item, index) => (
                     <li key={index}>
-                        <TeacherCard item={item} />
+                        <TeacherCard
+                            item={item}
+                            isFavorite={favoriteTeachers.some(
+                                (favorite) => favorite.id === index
+                            )}
+                        />
                     </li>
                 ))}
             </TeachersList>

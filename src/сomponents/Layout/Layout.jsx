@@ -26,6 +26,7 @@ import {
     REGISTRATION_ROUTE,
     TEACHERS_ROUTE,
 } from "../../constants/routes";
+import { AuthUser } from "../AuthWrapper/AuthWrapper";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);
@@ -66,30 +67,7 @@ const Layout = ({ children }) => {
                         </StyledNavLink>
                     )}
                 </PagesWrapper>
-                <AuthWrapper>
-                    {isAuth ? (
-                        <LogOutBtn onClick={handleLogout}>
-                            <BtnLogOut />
-                            Log Out <NameText>{user.name}</NameText>
-                        </LogOutBtn>
-                    ) : (
-                        <>
-                            <StyledAuthLink
-                                to={LOGIN_ROUTE}
-                                onClick={handleLoginClick}
-                            >
-                                <img src={IconLogin} alt="Log in" />
-                                Log in
-                            </StyledAuthLink>
-                        </>
-                    )}
-                    <StyledRegistrationLink
-                        to={REGISTRATION_ROUTE}
-                        onClick={handleLoginClick}
-                    >
-                        Registration
-                    </StyledRegistrationLink>
-                </AuthWrapper>
+                <AuthUser />
             </Header>
             <main>{children}</main>
         </Container>

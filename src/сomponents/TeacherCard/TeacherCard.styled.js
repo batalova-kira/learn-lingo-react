@@ -28,6 +28,6 @@ export const Avatar = styled.img`
 
 export const AvatarIcon = styled.img`
     top: 20px;
-    left: 87px;
+    left: 92px;
     position: absolute;
 `;

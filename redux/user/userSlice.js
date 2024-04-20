@@ -7,6 +7,7 @@ const initialState = {
     name: null,
     isAuthenticated: false,
     selectedLevel: null,
+    favorite: [],
 };
 
 const userSlice = createSlice({
@@ -33,9 +34,27 @@ const userSlice = createSlice({
         setSelectedLevel: (state, { payload }) => {
             state.selectedLevel = payload;
         },
+        toggleFavorite: (state, { payload }) => {
+            const index = payload.index;
+            if (index !== undefined) {
+                const existingIndex = state.favorite.findIndex(
+                    (car) => car.index === index
+                );
+                if (existingIndex === -1) {
+                    state.favorite.push({ index });
+                } else {
+                    state.favorite.splice(existingIndex, 1);
+                }
+            }
+        },
     },
 });
 
-export const { setUser, removeUser, setToken, setSelectedLevel } =
-    userSlice.actions;
+export const {
+    setUser,
+    removeUser,
+    setToken,
+    setSelectedLevel,
+    toggleFavorite,
+} = userSlice.actions;
 export const userReducer = userSlice.reducer;

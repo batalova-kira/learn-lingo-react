@@ -3,9 +3,11 @@ import { closeModal } from "../../../redux/modal/modalSlice";
 import { useEffect } from "react";
 // import { selectModalData } from "../../../redux/modal/modalSelectors";
 import { BtnClose, StyledModal } from "./Modal.styled";
+import { useNavigate } from "react-router-dom";
 
 const ModalWrapper = ({ title, isOpen, children }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log("useEffect для Escape");
@@ -32,11 +34,16 @@ const ModalWrapper = ({ title, isOpen, children }) => {
         }
     };
 
+    const handleCloseModal = () => {
+        dispatch(closeModal());
+        navigate("/"); // Перенаправлення на сторінку "/"
+    };
+
     return (
         isOpen && (
             <StyledModal onClick={handleOverlayClick}>
                 <div className="modal">
-                    <BtnClose onClick={() => dispatch(closeModal())} />
+                    <BtnClose onClick={handleCloseModal} />
                     {children}
                 </div>
             </StyledModal>

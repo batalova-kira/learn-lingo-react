@@ -8,7 +8,7 @@ import {
 import IconOnline from "../../assets/icons/online.svg";
 import { CardHeader } from "../CardHeader/CardHeader";
 
-export const TeacherCard = ({ item }) => {
+export const TeacherCard = ({ item, isFavorite }) => {
     const { avatar_url } = item;
     return (
         <WrapperCard>
@@ -16,7 +16,7 @@ export const TeacherCard = ({ item }) => {
                 <Avatar src={avatar_url} alt="teacher" />
                 <AvatarIcon src={IconOnline} alt="online status" />
             </WrapperAvatar>
-            <CardHeader item={item} />
+            <CardHeader item={item} isFavorite={isFavorite} />
         </WrapperCard>
     );
 };
