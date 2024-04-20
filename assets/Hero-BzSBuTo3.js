@@ -1,4 +1,4 @@
-import{u as r,j as e}from"./index-mvXhiYyk.js";const a=r.div`
+import{u as r,j as e}from"./index-CN-qTMi3.js";const a=r.div`
     display: flex;
     gap: 24px;
     margin-bottom: 24px;
@@ -93,4 +93,4 @@ import{u as r,j as e}from"./index-mvXhiYyk.js";const a=r.div`
     line-height: 1.29;
     letter-spacing: -0.02em;
     color: ${t=>t.theme.colors.secondBlack};
-`,m="/learn-lingo-react/assets/girl-jRuYr3yu.svg",f=()=>e.jsxs(e.Fragment,{children:[e.jsxs(a,{children:[e.jsxs(s,{children:[e.jsxs(l,{children:["Unlock your potential with the best"," ",e.jsx(c,{children:"language"})," tutors"]}),e.jsx(h,{children:e.jsx(x,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),e.jsx(p,{children:"Get started"})]}),e.jsx(d,{children:e.jsx("img",{src:m,alt:"happy girl with laptop"})})]}),e.jsxs(g,{children:[e.jsxs(o,{children:[e.jsx(i,{children:"32,000 +"}),e.jsx(n,{children:"Experienced tutors"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"300,000 +"}),e.jsx(n,{children:"5-star tutor reviews"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"120 +"}),e.jsx(n,{children:"Subjects taught"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"200 +"}),e.jsx(n,{children:"Tutor nationalities"})]})]})]}),j=()=>e.jsx(e.Fragment,{children:e.jsx(f,{})});export{j as default};
+`,m="/learn-lingo-react/assets/girl-jRuYr3yu.svg",u=()=>e.jsxs(e.Fragment,{children:[e.jsxs(a,{children:[e.jsxs(s,{children:[e.jsxs(l,{children:["Unlock your potential with the best"," ",e.jsx(c,{children:"language"})," tutors"]}),e.jsx(h,{children:e.jsx(x,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),e.jsx(p,{children:"Get started"})]}),e.jsx(d,{children:e.jsx("img",{src:m,alt:"happy girl with laptop"})})]}),e.jsxs(g,{children:[e.jsxs(o,{children:[e.jsx(i,{children:"32,000 +"}),e.jsx(n,{children:"Experienced tutors"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"300,000 +"}),e.jsx(n,{children:"5-star tutor reviews"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"120 +"}),e.jsx(n,{children:"Subjects taught"})]}),e.jsxs(o,{children:[e.jsx(i,{children:"200 +"}),e.jsx(n,{children:"Tutor nationalities"})]})]})]});export{u as H};
