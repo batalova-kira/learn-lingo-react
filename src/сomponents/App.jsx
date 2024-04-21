@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Navigate } from "react-router-dom";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Layout from "./Layout/Layout";
 import * as ROUTES from "../constants/routes.js";
 import "./../firebase";
@@ -51,16 +52,19 @@ export const appRoutes = [
 
 export const App = () => {
     return (
-        <Layout>
-            <Suspense fallback={<p>Loading..</p>}>
-                <Routes>
-                    {appRoutes.map(({ path, element }) => (
-                        <Route key={path} path={path} element={element} />
-                    ))}
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
-            </Suspense>
-        </Layout>
+        <>
+            <Layout>
+                <Suspense fallback={<p>Loading..</p>}>
+                    <Routes>
+                        {appRoutes.map(({ path, element }) => (
+                            <Route key={path} path={path} element={element} />
+                        ))}
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
+                </Suspense>
+            </Layout>
+            <ToastContainer />
+        </>
     );
 };
 

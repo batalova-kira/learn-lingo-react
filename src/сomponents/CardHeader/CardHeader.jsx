@@ -17,15 +17,24 @@ import {
 import IconBook from "../../assets/icons/book.svg";
 import IconStar from "../../assets/icons/start.svg";
 import { CardDescription } from "../CardDescription/CardDescription";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../../redux/user/userSlice";
+import { isAuthenticated } from "../../../redux/user/selectors";
+import { toast } from "react-toastify";
 
 export const CardHeader = ({ item, isFavorite }) => {
     const { name, surname, lessons_done, rating, price_per_hour } = item;
     const dispatch = useDispatch();
+    const isAuth = useSelector(isAuthenticated);
 
     const handleClick = (event) => {
         event.preventDefault();
+        if (!isAuth) {
+            toast.error(
+                "This feature is available only for authenticated users!"
+            );
+            return;
+        }
         dispatch(toggleFavorite(item));
     };
     return (

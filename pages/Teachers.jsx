@@ -42,7 +42,7 @@ const Teachers = () => {
                         <TeacherCard
                             item={item}
                             isFavorite={favoriteTeachers.some(
-                                (favorite) => favorite.id === index
+                                (favorite) => favorite.id === item.id
                             )}
                         />
                     </li>

@@ -35,16 +35,14 @@ const userSlice = createSlice({
             state.selectedLevel = payload;
         },
         toggleFavorite: (state, { payload }) => {
-            const index = payload.index;
-            if (index !== undefined) {
-                const existingIndex = state.favorite.findIndex(
-                    (car) => car.index === index
-                );
-                if (existingIndex === -1) {
-                    state.favorite.push({ index });
-                } else {
-                    state.favorite.splice(existingIndex, 1);
-                }
+            const teacherId = payload.id;
+            const index = state.favorite.findIndex(
+                (item) => item.id === teacherId
+            );
+            if (index === -1) {
+                state.favorite.push(payload);
+            } else {
+                state.favorite.splice(index, 1);
             }
         },
     },
