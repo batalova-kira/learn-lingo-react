@@ -37,13 +37,16 @@ const Teachers = () => {
     return (
         <>
             <TeachersList>
-                {teachers.slice(0, displayedTeachers).map((item, index) => (
-                    <li key={index}>
+                {teachers.slice(0, displayedTeachers).map((item) => (
+                    <li key={item.id}>
                         <TeacherCard
                             item={item}
-                            isFavorite={favoriteTeachers.some(
-                                (favorite) => favorite.id === item.id
-                            )}
+                            isFavorite={
+                                favoriteTeachers &&
+                                favoriteTeachers.some(
+                                    (favorite) => favorite.id === item.id
+                                )
+                            }
                         />
                     </li>
                 ))}

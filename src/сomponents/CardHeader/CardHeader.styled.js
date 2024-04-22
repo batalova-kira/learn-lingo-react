@@ -86,12 +86,12 @@ export const HeartIcon = styled(FaRegHeart)`
 
 export const HeartFullIcon = styled(FaHeart)`
     font-size: 22px;
-    color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.pink};
     cursor: pointer;
 
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        color: ${(props) => props.theme.colors.pink};
+        color: ${(props) => props.theme.colors.lightPink};
     }
 `;

@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { setUser, setToken } from "../../../redux/user/userSlice";
+import {
+    setUser,
+    setToken,
+    setUserFavorites,
+} from "../../../redux/user/userSlice";
 import { InputSignUp, SignBtn, WrapperInput } from "../SignUp/SignUp.styled";
+import { getDatabase, onValue, ref } from "firebase/database";
 
 export const SignIn = () => {
     const [email, setEmail] = useState("");
@@ -31,6 +36,16 @@ export const SignIn = () => {
                     token: user.accessToken,
                 })
             );
+
+            const db = getDatabase();
+            const userFavoritesRef = ref(db, `users/${user.uid}/favorites`);
+            onValue(userFavoritesRef, (snapshot) => {
+                const favorites = snapshot.val();
+                if (favorites) {
+                    // Оновлення стану з фаворитами користувача
+                    dispatch(setUserFavorites(favorites));
+                }
+            });
 
             navigateTo("/");
         } catch (error) {

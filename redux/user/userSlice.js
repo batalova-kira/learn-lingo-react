@@ -27,6 +27,7 @@ const userSlice = createSlice({
             state.id = null;
             state.name = null;
             state.isAuthenticated = false;
+            state.favorite = [];
         },
         setToken: (state, { payload }) => {
             state.token = payload;
@@ -36,14 +37,19 @@ const userSlice = createSlice({
         },
         toggleFavorite: (state, { payload }) => {
             const teacherId = payload.id;
-            const index = state.favorite.findIndex(
-                (item) => item.id === teacherId
-            );
-            if (index === -1) {
-                state.favorite.push(payload);
-            } else {
-                state.favorite.splice(index, 1);
+            if (teacherId) {
+                const index = state.favorite.findIndex(
+                    (item) => item.id === teacherId
+                );
+                if (index === -1) {
+                    state.favorite.push(payload);
+                } else {
+                    state.favorite.splice(index, 1);
+                }
             }
+        },
+        setUserFavorites: (state, { payload }) => {
+            state.favorite = payload;
         },
     },
 });
@@ -54,5 +60,6 @@ export const {
     setToken,
     setSelectedLevel,
     toggleFavorite,
+    setUserFavorites,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;

@@ -17,7 +17,7 @@ import { modalReducer } from "./modal/modalSlice";
 const userConfig = {
     key: "user",
     storage,
-    // whitelist: ["token"],
+    whitelist: ["token", "favorite"],
     // blacklist: ['isLoading', 'error'],
 };
 
