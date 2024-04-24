@@ -1,1 +1,0 @@
-import{u as t,s as i,j as e}from"./index-B6dtwSiL.js";import{T as o,a as c}from"./Teachers.styled-ptWIl_km.js";const h=()=>{const s=t(i);return e.jsx(e.Fragment,{children:e.jsx(o,{children:s&&s.map(r=>e.jsx("li",{children:e.jsx(c,{item:r,isFavorite:s.some(a=>a.id===r.id)})},r.uuid))})})};export{h as default};
