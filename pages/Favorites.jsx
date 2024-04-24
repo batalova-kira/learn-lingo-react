@@ -12,14 +12,13 @@ const Favorites = () => {
             <TeachersList>
                 {favoriteTeachers &&
                     favoriteTeachers.map((item) => (
-                        <li key={item.uuid}>
-                            <TeacherCard
-                                item={item}
-                                isFavorite={favoriteTeachers.some(
-                                    (favorite) => favorite.id === item.id
-                                )}
-                            />
-                        </li>
+                        <TeacherCard
+                            key={item.uuid}
+                            item={item}
+                            isFavorite={favoriteTeachers.some(
+                                (favorite) => favorite.id === item.id
+                            )}
+                        />
                     ))}
             </TeachersList>
         </>
