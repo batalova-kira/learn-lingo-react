@@ -12,7 +12,7 @@ const Favorites = () => {
             <TeachersList>
                 {favoriteTeachers &&
                     favoriteTeachers.map((item) => (
-                        <li key={item.id}>
+                        <li key={item.uuid}>
                             <TeacherCard
                                 item={item}
                                 isFavorite={favoriteTeachers.some(

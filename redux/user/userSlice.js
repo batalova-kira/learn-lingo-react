@@ -20,14 +20,23 @@ const userSlice = createSlice({
             state.id = payload.id;
             state.name = payload.name;
             state.isAuthenticated = true;
+            // Зчитування фейворитів з локального сховища при вході користувача
+            const favorites = localStorage.getItem(payload.id);
+            if (favorites) {
+                state.favorite = JSON.parse(favorites);
+            }
         },
         removeUser: (state) => {
+            if (state.isAuthenticated) {
+                // Очищення фейворитів лише для аутентифікованого користувача
+                state.favorite = [];
+            }
             state.email = null;
             state.token = null;
             state.id = null;
             state.name = null;
             state.isAuthenticated = false;
-            state.favorite = [];
+            localStorage.removeItem("id");
         },
         setToken: (state, { payload }) => {
             state.token = payload;
@@ -37,7 +46,8 @@ const userSlice = createSlice({
         },
         toggleFavorite: (state, { payload }) => {
             const teacherId = payload.id;
-            if (teacherId) {
+            if (state.isAuthenticated) {
+                // Перевірка, чи користувач аутентифікований
                 const index = state.favorite.findIndex(
                     (item) => item.id === teacherId
                 );
@@ -46,6 +56,8 @@ const userSlice = createSlice({
                 } else {
                     state.favorite.splice(index, 1);
                 }
+                // Збереження оновлених фейворитів в локальному сховищі під ключем ідентифікатора користувача
+                localStorage.setItem(state.id, JSON.stringify(state.favorite));
             }
         },
         setUserFavorites: (state, { payload }) => {

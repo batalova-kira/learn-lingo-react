@@ -26,7 +26,6 @@ export const SignIn = () => {
                 pass
             );
             const user = userCredential.user;
-            console.log(user);
             dispatch(setToken(user.accessToken));
             dispatch(
                 setUser({
@@ -36,16 +35,6 @@ export const SignIn = () => {
                     token: user.accessToken,
                 })
             );
-
-            const db = getDatabase();
-            const userFavoritesRef = ref(db, `users/${user.uid}/favorites`);
-            onValue(userFavoritesRef, (snapshot) => {
-                const favorites = snapshot.val();
-                if (favorites) {
-                    // Оновлення стану з фаворитами користувача
-                    dispatch(setUserFavorites(favorites));
-                }
-            });
 
             navigateTo("/");
         } catch (error) {

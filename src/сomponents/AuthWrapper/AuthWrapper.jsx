@@ -1,6 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import "firebase/auth";
 
+import { useDispatch, useSelector } from "react-redux";
 import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
 import { removeUser } from "../../../redux/user/userSlice";
 import {
@@ -14,6 +15,7 @@ import {
 import IconLogin from "../../assets/icons/login.svg";
 import { openModal } from "../../../redux/modal/modalSlice";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../../constants/routes";
+import { getAuth, signOut } from "firebase/auth";
 
 export const AuthUser = () => {
     const dispatch = useDispatch();
@@ -21,7 +23,15 @@ export const AuthUser = () => {
     const user = useSelector(selectUser);
 
     const handleLogout = () => {
-        dispatch(removeUser());
+        const auth = getAuth();
+
+        signOut(auth) // Викликаємо метод signOut() об'єкта auth для виходу з облікового запису
+            .then(() => {
+                dispatch(removeUser());
+            })
+            .catch((error) => {
+                console.error("Помилка виходу:", error);
+            });
     };
 
     const handleLoginClick = () => {
