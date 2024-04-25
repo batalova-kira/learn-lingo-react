@@ -1,4 +1,4 @@
-import{b as t,G as h,d as m,f,r as g,j as n,$ as i}from"./index-CSfrUQ5v.js";const v=t.input`
+import{c as t,G as h,e as m,g,r as f,j as n,a2 as i}from"./index-CO-v7z8k.js";const v=t.input`
     margin-bottom: 18px;
     padding: 16px 18px;
     width: 100%;
@@ -96,7 +96,7 @@ import{b as t,G as h,d as m,f,r as g,j as n,$ as i}from"./index-CSfrUQ5v.js";con
     text-align: start;
     margin-bottom: 20px;
     color: ${o=>o.theme.colors.black};
-`,M=({title:o,isOpen:a,children:l})=>{const r=m(),s=f();g.useEffect(()=>{console.log("useEffect для Escape");const e=p=>{p.code==="Escape"&&r(i())};return a&&(window.addEventListener("keydown",e),document.body.style.overflow="hidden"),()=>{window.removeEventListener("keydown",e),document.body.style.overflow="auto"}},[r,a,o,l]);const c=e=>{e.target===e.currentTarget&&r(i())},d=()=>{r(i()),s("/")};return a&&n.jsx(x,{onClick:c,children:n.jsxs("div",{className:"modal",children:[n.jsx(b,{onClick:d}),l]})})},E=t.p`
+`,M=({title:o,isOpen:a,children:l})=>{const r=m(),s=g();f.useEffect(()=>{console.log("useEffect для Escape");const e=p=>{p.code==="Escape"&&r(i())};return a&&(window.addEventListener("keydown",e),document.body.style.overflow="hidden"),()=>{window.removeEventListener("keydown",e),document.body.style.overflow="auto"}},[r,a,o,l]);const c=e=>{e.target===e.currentTarget&&r(i())},d=()=>{r(i()),s("/")};return a&&n.jsx(x,{onClick:c,children:n.jsxs("div",{className:"modal",children:[n.jsx(b,{onClick:d}),l]})})},E=t.p`
     margin-bottom: 40px;
 
     font-family: var(--font-family);
