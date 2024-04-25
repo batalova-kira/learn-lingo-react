@@ -26,7 +26,7 @@ export const LogoWrapper = styled.div`
 
 export const LogoText = styled.span`
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     font-size: 20px;
     line-height: 120%;
     letter-spacing: -0.02em;
@@ -41,7 +41,7 @@ export const PagesWrapper = styled.div`
 `;
 export const StyledNavLink = styled(NavLink)`
     font-family: var(--font-family);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     font-size: 16px;
     line-height: 125%;
     color: ${(props) => props.theme.colors.black};
@@ -64,7 +64,7 @@ export const StyledAuthLink = styled(NavLink)`
     gap: 8px;
     align-items: center;
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 16px;
     line-height: 1.25;
     color: ${(props) => props.theme.colors.black};
@@ -83,7 +83,7 @@ export const StyledRegistrationLink = styled(NavLink)`
     background: ${(props) => props.theme.colors.black};
     text-decoration: none;
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 16px;
     line-height: 125%;
     color: #fff;
@@ -102,7 +102,7 @@ export const LogOutBtn = styled.button`
     border: none;
     background: none;
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 16px;
     line-height: 1.25;
     color: ${(props) => props.theme.colors.black};

@@ -13,6 +13,7 @@ import {
 
 import { userReducer } from "./user/userSlice";
 import { modalReducer } from "./modal/modalSlice";
+import { filterReducer } from "./filters/filtersSlice";
 
 const userConfig = {
     key: "user",
@@ -25,6 +26,7 @@ export const store = configureStore({
     reducer: {
         user: persistReducer(userConfig, userReducer),
         modal: modalReducer,
+        filters: filterReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

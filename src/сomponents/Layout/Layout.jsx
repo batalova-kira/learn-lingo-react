@@ -30,16 +30,6 @@ import { AuthUser } from "../AuthWrapper/AuthWrapper";
 
 const Layout = ({ children }) => {
     const isAuth = useSelector(isAuthenticated);
-    const dispatch = useDispatch();
-    const user = useSelector(selectUser);
-
-    const handleLogout = () => {
-        dispatch(removeUser());
-    };
-
-    const handleLoginClick = () => {
-        dispatch(openModal());
-    };
 
     return (
         <Container>

@@ -5,11 +5,15 @@ import { TeacherCard } from "../src/сomponents/TeacherCard/TeacherCard";
 import { BtnMainLoadMore, TeachersList } from "./Teachers.styled";
 import { selectFavoriteTeachers } from "../redux/user/selectors";
 import { useSelector } from "react-redux";
+import { Filters } from "../src/сomponents/Filters/Filters";
 
 const Teachers = () => {
     const [teachers, setTeachers] = useState([]);
     const [displayedTeachers, setDisplayedTeachers] = useState(4);
     const favoriteTeachers = useSelector(selectFavoriteTeachers);
+    const [filterLevel, setFilterLevel] = useState("");
+    const [filterPrice, setFilterPrice] = useState("");
+    const [filterLanguage, setFilterLanguage] = useState("");
 
     useEffect(() => {
         const db = getDatabase(app);
@@ -29,6 +33,22 @@ const Teachers = () => {
         };
     }, []);
 
+    // фільтрування тічерів
+    const filteredTeachers = teachers.filter((teacher) => {
+        if (filterLevel && teacher.levels !== filterLevel) {
+            return false;
+        }
+        if (filterPrice && teacher.price_per_hour !== filterPrice) {
+            return false;
+        }
+        if (
+            filterLanguage &&
+            teacher.languages.indexOf(filterLanguage) === -1
+        ) {
+            return false;
+        }
+        return true;
+    });
     // Збільшення кількості відображених карток
     const handleLoadMore = () => {
         setDisplayedTeachers((prevCount) => prevCount + 4);
@@ -36,8 +56,16 @@ const Teachers = () => {
 
     return (
         <>
+            <Filters
+                filterLevel={filterLevel}
+                filterPrice={filterPrice}
+                filterLanguage={filterLanguage}
+                setFilterLevel={setFilterLevel}
+                setFilterPrice={setFilterPrice}
+                setFilterLanguage={setFilterLanguage}
+            />
             <TeachersList>
-                {teachers.slice(0, displayedTeachers).map((item) => (
+                {filteredTeachers.slice(0, displayedTeachers).map((item) => (
                     <li key={item.id}>
                         <TeacherCard
                             item={item}

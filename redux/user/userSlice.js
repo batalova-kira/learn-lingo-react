@@ -60,9 +60,9 @@ const userSlice = createSlice({
                 localStorage.setItem(state.id, JSON.stringify(state.favorite));
             }
         },
-        setUserFavorites: (state, { payload }) => {
-            state.favorite = payload;
-        },
+        // setUserFavorites: (state, { payload }) => {
+        //     state.favorite = payload;
+        // },
     },
 });
 

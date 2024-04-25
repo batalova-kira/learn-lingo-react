@@ -35,13 +35,19 @@ export const CardDescription = ({ item }) => {
         <>
             <DescWrapper>
                 <HeaderLanguages>
-                    Speaks: <DescAccent>{languages.join(", ")}</DescAccent>
+                    Speaks:{" "}
+                    <DescAccent>
+                        {languages ? languages.join(", ") : ""}
+                    </DescAccent>
                 </HeaderLanguages>
                 <HeaderLanguages>
                     Lesson Info: <DescAccent>{lesson_info}</DescAccent>
                 </HeaderLanguages>
                 <HeaderLanguages>
-                    Conditions: <DescAccent>{conditions.join(" ")}</DescAccent>
+                    Conditions:{" "}
+                    <DescAccent>
+                        {conditions ? conditions.join(" ") : ""}
+                    </DescAccent>
                 </HeaderLanguages>
             </DescWrapper>
             {!showDetails && (
