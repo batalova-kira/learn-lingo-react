@@ -13,6 +13,12 @@ import {
     setFilterLevel,
     setFilterPrice,
 } from "../../../redux/filters/filtersSlice";
+import {
+    FilterLabel,
+    FilterThumb,
+    FiltersWrapper,
+    customStyles,
+} from "./Filters.styled";
 
 export const Filters = ({ teachers }) => {
     const dispatch = useDispatch();
@@ -28,7 +34,7 @@ export const Filters = ({ teachers }) => {
         .map((price) => ({ value: price.toString(), label: price.toString() }));
 
     const levelOptions = [
-        { value: "", label: "All" },
+        // { value: "", label: "All" },
         { value: "A1 Beginner", label: "A1 Beginner" },
         { value: "A2 Elementary", label: "A2 Elementary" },
         { value: "B1 Intermediate", label: "B1 Intermediate" },
@@ -38,7 +44,7 @@ export const Filters = ({ teachers }) => {
     ];
 
     const languageOptions = [
-        { value: "", label: "All" },
+        // { value: "", label: "All" },
         { value: "English", label: "English" },
         { value: "Spanish", label: "Spanish" },
         { value: "French", label: "French" },
@@ -65,40 +71,48 @@ export const Filters = ({ teachers }) => {
     };
 
     return (
-        <div>
-            <label>
-                Filter by Level:
+        <FiltersWrapper>
+            <FilterThumb>
+                <FilterLabel htmlFor="language">Languages</FilterLabel>
                 <Select
-                    value={levelOptions.find(
-                        (option) => option.value === filterLevel
-                    )}
-                    onChange={handleLevelChange}
-                    options={levelOptions}
-                    placeholder="Select Level"
-                />
-            </label>
-            <label>
-                Filter by Price:
-                <Select
-                    value={priceOptions.find(
-                        (option) => option.value === filterPrice
-                    )}
-                    onChange={handlePriceChange}
-                    options={priceOptions}
-                    placeholder="Select Price"
-                />
-            </label>
-            <label>
-                Filter by Language:
-                <Select
+                    id="language"
                     value={languageOptions.find(
                         (option) => option.value === filterLanguage
                     )}
+                    styles={customStyles}
                     onChange={handleLanguageChange}
                     options={languageOptions}
                     placeholder="Select Language"
                 />
-            </label>
-        </div>
+            </FilterThumb>
+            <FilterThumb>
+                <FilterLabel htmlFor="knowledge">
+                    Level of knowledge
+                </FilterLabel>
+                <Select
+                    id="knowledge"
+                    value={levelOptions.find(
+                        (option) => option.value === filterLevel
+                    )}
+                    styles={customStyles}
+                    onChange={handleLevelChange}
+                    options={levelOptions}
+                    placeholder="Select Level"
+                />
+            </FilterThumb>
+            <FilterThumb>
+                <FilterLabel htmlFor="price">Price</FilterLabel>
+                <Select
+                    id="price"
+                    value={priceOptions.find(
+                        (option) => option.value === filterPrice
+                    )}
+                    onChange={handlePriceChange}
+                    styles={customStyles}
+                    options={priceOptions}
+                    placeholder="Select Price"
+                />
+            </FilterThumb>
+        </FiltersWrapper>
     );
 };
