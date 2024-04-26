@@ -11,8 +11,9 @@ import {
 } from "./CardDescription.styled";
 import { ReviewItem } from "../ReviewItem/ReviewItem";
 import { useDispatch, useSelector } from "react-redux";
-import { selectLevel } from "../../../redux/user/selectors";
+
 import { setSelectedLevel } from "../../../redux/user/userSlice";
+import { selectLevel } from "../../../redux/filters/filtersSelectors";
 
 export const CardDescription = ({ item }) => {
     const [showDetails, setShowDetails] = useState(false);

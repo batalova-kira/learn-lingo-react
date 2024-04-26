@@ -1,15 +1,33 @@
 import Select from "react-select";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+    selectLanguage,
+    selectPrice,
+    selectLevel,
+} from "../../../redux/filters/filtersSelectors";
 
-export const Filters = ({
-    filterLevel,
-    setFilterLevel,
-    filterPrice,
-    setFilterPrice,
-    filterLanguage,
+import { useSearchParams } from "react-router-dom";
+import {
     setFilterLanguage,
-}) => {
-    const levels = [
+    setFilterLevel,
+    setFilterPrice,
+} from "../../../redux/filters/filtersSlice";
+
+export const Filters = ({ teachers }) => {
+    const dispatch = useDispatch();
+    const filterLanguage = useSelector(selectLanguage);
+    const filterLevel = useSelector(selectLevel);
+    const filterPrice = useSelector(selectPrice);
+    const priceOptions = teachers
+        .map((teacher) => teacher.price_per_hour)
+        .sort((a, b) => a - b)
+        .filter((value, index, array) => {
+            return index === 0 || value !== array[index - 1];
+        })
+        .map((price) => ({ value: price.toString(), label: price.toString() }));
+
+    const levelOptions = [
         { value: "", label: "All" },
         { value: "A1 Beginner", label: "A1 Beginner" },
         { value: "A2 Elementary", label: "A2 Elementary" },
@@ -19,22 +37,31 @@ export const Filters = ({
         { value: "C2 Proficient", label: "C2 Proficient" },
     ];
 
-    const priceOptions = [
-        { value: "", label: "All" },
-        { value: "10", label: "$10" },
-        { value: "20", label: "$20" },
-        { value: "30", label: "$30" },
-    ];
-
     const languageOptions = [
         { value: "", label: "All" },
         { value: "English", label: "English" },
         { value: "Spanish", label: "Spanish" },
         { value: "French", label: "French" },
+        { value: "Italian", label: "Italian" },
+        { value: "German", label: "German" },
+        { value: "Mandarin Chinese", label: "Mandarin Chinese" },
+        { value: "Korean", label: "Korean" },
+        { value: "Vietnamese", label: "Vietnamese" },
     ];
 
+    // Обробники подій для зміни фільтрів
+    const handleLanguageChange = (selectedOption) => {
+        dispatch(setFilterLanguage(selectedOption.value));
+        console.log(selectedOption.value);
+    };
+
+    const handleLevelChange = (selectedOption) => {
+        dispatch(setFilterLevel(selectedOption.value));
+        console.log(selectedOption.value);
+    };
+
     const handlePriceChange = (selectedOption) => {
-        setFilterPrice(selectedOption.value);
+        dispatch(setFilterPrice(selectedOption.value));
     };
 
     return (
@@ -42,13 +69,11 @@ export const Filters = ({
             <label>
                 Filter by Level:
                 <Select
-                    value={levels.find(
+                    value={levelOptions.find(
                         (option) => option.value === filterLevel
                     )}
-                    onChange={(selectedOption) =>
-                        setFilterLevel(selectedOption.value)
-                    }
-                    options={levels}
+                    onChange={handleLevelChange}
+                    options={levelOptions}
                     placeholder="Select Level"
                 />
             </label>
@@ -69,9 +94,7 @@ export const Filters = ({
                     value={languageOptions.find(
                         (option) => option.value === filterLanguage
                     )}
-                    onChange={(selectedOption) =>
-                        setFilterLanguage(selectedOption.value)
-                    }
+                    onChange={handleLanguageChange}
                     options={languageOptions}
                     placeholder="Select Language"
                 />
