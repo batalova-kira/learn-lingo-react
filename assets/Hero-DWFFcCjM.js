@@ -1,4 +1,4 @@
-import{g as r,j as e}from"./index-K_abr6Qp.js";const a=r.div`
+import{u as r,j as e}from"./index-DyLxcoQd.js";const a=r.div`
     display: flex;
     gap: 24px;
     margin-bottom: 24px;
