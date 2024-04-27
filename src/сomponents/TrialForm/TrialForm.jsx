@@ -1,10 +1,13 @@
 import React from "react";
 import {
+    BookBtn,
+    InputsContainer,
     RadioButtonContainer,
     RadioButtonInput,
     RadioButtonLabel,
     WrapperRadioButtons,
 } from "./TrialForm.styled";
+import { InputSignUp } from "../SignUp/SignUp.styled";
 
 const TrialForm = () => {
     return (
@@ -56,6 +59,29 @@ const TrialForm = () => {
                     Culture, travel or hobby
                 </RadioButtonLabel>
             </WrapperRadioButtons>
+            <InputsContainer>
+                <InputSignUp
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                />
+
+                <InputSignUp
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                />
+
+                <InputSignUp
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone number"
+                />
+            </InputsContainer>
+            <BookBtn type="submit">Book</BookBtn>
         </form>
     );
 };

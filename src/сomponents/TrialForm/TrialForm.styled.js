@@ -4,6 +4,7 @@ export const WrapperRadioButtons = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 40px;
 `;
 
 export const RadioButtonContainer = styled.div`
@@ -26,8 +27,9 @@ export const RadioButtonLabel = styled.label`
 export const RadioButtonInput = styled.input`
     position: relative;
     margin-right: 8px;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+
     cursor: pointer;
     appearance: none;
     color: ${(props) => props.theme.colors.pink};
@@ -41,9 +43,8 @@ export const RadioButtonInput = styled.input`
         content: "";
         display: block;
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        margin: 4px;
+        width: 10px;
+        height: 10px;
         background-color: transparent;
         position: absolute;
         top: 50%;
@@ -56,15 +57,33 @@ export const RadioButtonInput = styled.input`
     &:hover::after {
         background-color: ${(props) => props.theme.colors.pink};
     }
-    &::after {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 
-    /* Фокусний стиль */
-    &:focus {
-        outline: 2px solid ${(props) => props.theme.colors.pink};
+    &:checked {
+        outline: 1px solid ${(props) => props.theme.colors.pink};
+        border: 1px solid ${(props) => props.theme.colors.pink};
     }
+`;
+
+export const BookBtn = styled.button`
+    display: inline;
+    border-radius: 12px;
+    padding: 16px 215px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: 18px;
+    line-height: 1.56;
+    color: ${(props) => props.theme.colors.black};
+    background-color: ${(props) => props.theme.colors.pink};
+
+    &:hover {
+        cursor: pointer;
+        background: ${(p) => p.theme.colors.darkPink};
+    }
+`;
+
+export const InputsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px;
 `;
