@@ -14,6 +14,7 @@ import {
     WrapperHeroBottom,
 } from "./Hero.styled";
 import girl from "../../assets/icons/girl.svg";
+import { NavLink } from "react-router-dom";
 
 export const Hero = () => {
     return (
@@ -32,7 +33,12 @@ export const Hero = () => {
                             and experienced tutors.
                         </TextHeroLeft>
                     </TextHeroWrapper>
-                    <HeroBtn>Get started</HeroBtn>
+                    <NavLink
+                        to={"/teachers"}
+                        style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                        <HeroBtn>Get started</HeroBtn>
+                    </NavLink>
                 </HeroLeft>
                 <HeroRight>
                     <img src={girl} alt="happy girl with laptop" />

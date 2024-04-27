@@ -5,12 +5,11 @@ import { useEffect } from "react";
 import { BtnClose, StyledModal } from "./Modal.styled";
 import { useNavigate } from "react-router-dom";
 
-const ModalWrapper = ({ title, isOpen, children }) => {
+const ModalWrapper = ({ title, isOpen, children, navigateTo, modalWidth }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log("useEffect для Escape");
         const handleKeyDown = (event) => {
             if (event.code === "Escape") {
                 dispatch(closeModal());
@@ -36,13 +35,17 @@ const ModalWrapper = ({ title, isOpen, children }) => {
 
     const handleCloseModal = () => {
         dispatch(closeModal());
-        navigate("/"); // Перенаправлення на сторінку "/"
+        if (navigateTo === "/teachers") {
+            navigate("/teachers");
+        } else {
+            navigate("/");
+        } // Перенаправлення на сторінку "/"
     };
 
     return (
         isOpen && (
             <StyledModal onClick={handleOverlayClick}>
-                <div className="modal">
+                <div className="modal" style={{ maxWidth: modalWidth }}>
                     <BtnClose onClick={handleCloseModal} />
                     {children}
                 </div>

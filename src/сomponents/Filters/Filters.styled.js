@@ -21,13 +21,14 @@ export const FilterLabel = styled.label`
 `;
 
 export const customStyles = {
-    control: (provided) => ({
+    control: (provided, state) => ({
         ...provided,
         backgroundColor: "#fff",
         borderRadius: "14px",
         padding: "6px",
-        borderColor: "#fff",
+        borderColor: state.isFocused ? "#00f" : "#fff",
         width: "auto",
+        boxShadow: state.isFocused ? "none" : provided.boxShadow,
     }),
     menu: (provided) => ({
         ...provided,

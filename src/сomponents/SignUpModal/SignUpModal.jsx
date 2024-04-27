@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
+
 import ModalWrapper from "../Modal/Modal";
 import { SignUpForm } from "../SignUp/SignUp";
-import { LOGIN_ROUTE } from "../../constants/routes";
+
 import { TitleModal } from "../Modal/Modal.styled";
 import { TextModal } from "./SignUpModal.styled";
 

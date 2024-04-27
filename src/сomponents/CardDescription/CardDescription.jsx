@@ -14,12 +14,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { setSelectedLevel } from "../../../redux/user/userSlice";
 import { selectLevel } from "../../../redux/filters/filtersSelectors";
+import { selectIsOpenModal } from "../../../redux/modal/modalSelectors";
+import { openModal } from "../../../redux/modal/modalSlice";
+import { TrialLesson } from "../TrialLesson/TrialLesson";
 
 export const CardDescription = ({ item }) => {
     const [showDetails, setShowDetails] = useState(false);
     const selectedLevel = useSelector(selectLevel);
     const dispatch = useDispatch();
-
+    const isOpenModal = useSelector(selectIsOpenModal);
     // Функція для встановлення обраного рівня
     const handleSelectLevel = (level) => {
         dispatch(setSelectedLevel(level));
@@ -32,6 +35,9 @@ export const CardDescription = ({ item }) => {
     const { languages, lesson_info, conditions, experience, reviews, levels } =
         item;
 
+    const handleOpenModal = () => {
+        dispatch(openModal());
+    };
     return (
         <>
             <DescWrapper>
@@ -74,7 +80,10 @@ export const CardDescription = ({ item }) => {
                                 </BtnLevel>
                             ))}
                         </WrapperBtnLevel>
-                        <BtnBookLesson>Book trial lesson</BtnBookLesson>
+                        <BtnBookLesson onClick={handleOpenModal}>
+                            Book trial lesson
+                        </BtnBookLesson>
+                        <TrialLesson isOpen={isOpenModal} item={item} />
                     </div>
                 </>
             )}

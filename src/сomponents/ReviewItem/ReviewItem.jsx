@@ -15,7 +15,7 @@ export const ReviewItem = ({ review }) => {
         <>
             <div>
                 <WrapperAvatar>
-                    <ReviewAvatar />
+                    <img />
                     <div>
                         <ReviewName>{reviewer_name}</ReviewName>
                         <WrapperReviewRating>
