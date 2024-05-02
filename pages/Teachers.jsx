@@ -25,11 +25,15 @@ const Teachers = () => {
         const dbRef = ref(db);
 
         const unsubscribe = onValue(dbRef, (snapshot) => {
-            const data = snapshot.val();
-            console.log("Updated data:", data);
-            if (data && typeof data === "object") {
-                const teachersArray = Object.values(data);
-                setTeachers(teachersArray);
+            try {
+                const data = snapshot.val();
+                console.log("Updated data:", data);
+                if (data && typeof data === "object") {
+                    const teachersArray = Object.values(data);
+                    setTeachers(teachersArray);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
             }
         });
 

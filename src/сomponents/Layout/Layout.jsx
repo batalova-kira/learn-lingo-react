@@ -1,29 +1,18 @@
 import React from "react";
 import {
-    AuthWrapper,
-    BtnLogOut,
     Container,
     Header,
-    LogOutBtn,
     LogoText,
     LogoWrapper,
-    NameText,
     PagesWrapper,
-    StyledAuthLink,
     StyledNavLink,
-    StyledRegistrationLink,
 } from "./Layout.styled";
 import IconUkraine from "../../assets/icons/ukraine.svg";
-import IconLogin from "../../assets/icons/login.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { removeUser } from "../../../redux/user/userSlice";
-import { isAuthenticated, selectUser } from "../../../redux/user/selectors";
-import { openModal } from "../../../redux/modal/modalSlice";
+import { useSelector } from "react-redux";
+import { isAuthenticated } from "../../../redux/user/selectors";
 import {
     FAVORITE_ROUTE,
     HOME_ROUTE,
-    LOGIN_ROUTE,
-    REGISTRATION_ROUTE,
     TEACHERS_ROUTE,
 } from "../../constants/routes";
 import { AuthUser } from "../AuthWrapper/AuthWrapper";
