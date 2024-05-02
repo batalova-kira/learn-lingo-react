@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ref, onValue } from "firebase/database";
-import { db } from "../src/firebase";
+import { ref, onValue, getDatabase } from "firebase/database";
+import { app } from "../src/firebase";
 import { TeacherCard } from "../src/сomponents/TeacherCard/TeacherCard";
 import { BtnMainLoadMore, TeachersList } from "./Teachers.styled";
 import { selectFavoriteTeachers } from "../redux/user/selectors";
@@ -21,6 +21,7 @@ const Teachers = () => {
     const filterPrice = useSelector(selectPrice);
 
     useEffect(() => {
+        const db = getDatabase(app);
         const dbRef = ref(db);
 
         const unsubscribe = onValue(dbRef, (snapshot) => {
