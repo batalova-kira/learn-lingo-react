@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { getAuth } from "firebase/auth";
+// import { getAuth } from "firebase/auth";
 import { setUser, setToken } from "../../../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 import { InputSignUp, SignBtn, WrapperInput } from "./SignUp.styled";
+import { auth } from "../../firebase";
 
 export const SignUpForm = () => {
     const [name, setName] = useState("");
@@ -16,7 +17,7 @@ export const SignUpForm = () => {
     const handleRegistration = async (e) => {
         e.preventDefault();
         try {
-            const auth = getAuth();
+            
             const userCredential = await createUserWithEmailAndPassword(
                 auth,
                 email,

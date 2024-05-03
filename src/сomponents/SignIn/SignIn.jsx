@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import {
-    setUser,
-    setToken,
-    setUserFavorites,
-} from "../../../redux/user/userSlice";
+import { setUser, setToken } from "../../../redux/user/userSlice";
 import { InputSignUp, SignBtn, WrapperInput } from "../SignUp/SignUp.styled";
-import { getDatabase, onValue, ref } from "firebase/database";
+import { auth } from "../../firebase";
 
 export const SignIn = () => {
     const [email, setEmail] = useState("");
@@ -19,7 +15,6 @@ export const SignIn = () => {
     const onSubmitSignIn = async (e) => {
         e.preventDefault();
         try {
-            const auth = getAuth();
             const userCredential = await signInWithEmailAndPassword(
                 auth,
                 email,
