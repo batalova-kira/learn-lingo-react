@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ref, onValue, getDatabase } from "firebase/database";
-import { app, db } from "../src/firebase";
+import { ref, onValue } from "firebase/database";
+import { db } from "../src/firebase";
 import { TeacherCard } from "../src/сomponents/TeacherCard/TeacherCard";
 import { BtnMainLoadMore, TeachersList } from "./Teachers.styled";
 import { selectFavoriteTeachers } from "../redux/user/selectors";
