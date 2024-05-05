@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { setUser, setToken } from "../../../redux/user/userSlice";
 import { InputSignUp, SignBtn, WrapperInput } from "../SignUp/SignUp.styled";
