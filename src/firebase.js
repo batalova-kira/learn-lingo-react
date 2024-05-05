@@ -10,12 +10,12 @@ const MESSAGING_SENDER_ID = import.meta.env.VITE_MESSAGING_SENDER_ID;
 const APP_ID = import.meta.env.VITE_APP_ID;
 
 const firebaseConfig = {
-    apiKey: API_KEY,
+    apiKey: String(API_KEY),
     authDomain: AUTH_DOMAIN,
-    projectId: PROJECT_ID,
+    projectId: String(PROJECT_ID),
     storageBucket: STORAGE_BUCKET,
     messagingSenderId: MESSAGING_SENDER_ID,
-    appId: APP_ID,
+    appId: String(APP_ID),
 };
 
 const app = initializeApp(firebaseConfig);
