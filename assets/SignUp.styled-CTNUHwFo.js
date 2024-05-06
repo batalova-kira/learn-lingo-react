@@ -1,4 +1,4 @@
-import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js";const y=o=>o.modal.isOpenModal;function b(o){return f({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"},child:[]}]})(o)}const k=t.div`
+import{G as f,u as t,b as u,m as x,r as b,j as n,y as i}from"./index-DU4od_Ca.js";const $=o=>o.modal.isOpenModal;function k(o){return f({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"},child:[]}]})(o)}const v=t.div`
     position: fixed;
     top: 0;
     right: 0;
@@ -26,7 +26,7 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
             cursor: auto;
         }
     }
-`,v=t(b)`
+`,w=t(k)`
     fill: ${o=>o.theme.colors.black};
 
     position: absolute;
@@ -44,7 +44,7 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
         transform: rotate(90deg);
         fill: ${o=>o.theme.colors.pink};
     }
-`,$=t.h2`
+`,M=t.h2`
     font-weight: 500;
     font-size: 40px;
     line-height: 1.2;
@@ -52,7 +52,7 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
     text-align: start;
     margin-bottom: 20px;
     color: ${o=>o.theme.colors.black};
-`,M=({title:o,isOpen:a,children:s,navigateTo:c,modalWidth:d})=>{const r=g(),l=u();x.useEffect(()=>{const e=m=>{m.code==="Escape"&&r(i())};return a&&(window.addEventListener("keydown",e),document.body.style.overflow="hidden"),()=>{window.removeEventListener("keydown",e),document.body.style.overflow="auto"}},[r,a,o,s]);const p=e=>{e.target===e.currentTarget&&r(i())},h=()=>{r(i()),l(c==="/teachers"?"/teachers":"/")};return a&&n.jsx(k,{onClick:p,children:n.jsxs("div",{className:"modal",style:{maxWidth:d},children:[n.jsx(v,{onClick:h}),s]})})},j=t.p`
+`,j=({title:o,isOpen:a,children:s,navigateTo:c,modalWidth:d,modalHeight:p})=>{const r=u(),l=x();b.useEffect(()=>{const e=g=>{g.code==="Escape"&&r(i())};return a&&(window.addEventListener("keydown",e),document.body.style.overflow="hidden"),()=>{window.removeEventListener("keydown",e),document.body.style.overflow="auto"}},[r,a,o,s]);const h=e=>{e.target===e.currentTarget&&r(i())},m=()=>{r(i()),l(c==="/teachers"?"/teachers":"/")};return a&&n.jsx(v,{onClick:h,children:n.jsxs("div",{className:"modal",style:{maxWidth:d,maxHeight:p},children:[n.jsx(w,{onClick:m}),s]})})},z=t.p`
     margin-bottom: 40px;
 
     font-family: var(--font-family);
@@ -60,7 +60,7 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
     font-size: 16px;
     line-height: 137%;
     color: ${o=>o.theme.colors.modalBlack};
-`,z=t.input`
+`,C=t.input`
     margin-bottom: 18px;
     padding: 16px 18px;
     width: 100%;
@@ -82,9 +82,9 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
     &:focus {
         outline: 1px solid ${o=>o.theme.colors.darkPink};
     }
-`,C=t.div`
+`,E=t.div`
     margin-bottom: 22px;
-`,E=t.button`
+`,I=t.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,4 +104,4 @@ import{G as f,u as t,b as g,m as u,r as x,j as n,y as i}from"./index-weXFE0QC.js
         cursor: pointer;
         background: ${o=>o.theme.colors.darkPink};
     }
-`;export{z as I,M,E as S,j as T,C as W,$ as a,y as s};
+`;export{C as I,j as M,I as S,z as T,E as W,M as a,$ as s};
