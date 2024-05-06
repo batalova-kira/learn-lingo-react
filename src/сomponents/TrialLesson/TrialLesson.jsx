@@ -20,6 +20,7 @@ export const TrialLesson = ({ isOpen, item }) => {
                 isOpen={isOpen}
                 navigateTo="/teachers"
                 modalWidth="600px"
+                modalHeight="972px"
             >
                 <TitleModal>Book trial lesson</TitleModal>
                 <CustomTextModal>

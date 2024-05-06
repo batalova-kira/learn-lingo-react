@@ -84,6 +84,6 @@ export const BookBtn = styled.button`
 export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin-bottom: 40px;
+
+    margin-bottom: 22px;
 `;

@@ -5,7 +5,14 @@ import { useEffect } from "react";
 import { BtnClose, StyledModal } from "./Modal.styled";
 import { useNavigate } from "react-router-dom";
 
-const ModalWrapper = ({ title, isOpen, children, navigateTo, modalWidth }) => {
+const ModalWrapper = ({
+    title,
+    isOpen,
+    children,
+    navigateTo,
+    modalWidth,
+    modalHeight,
+}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -45,7 +52,10 @@ const ModalWrapper = ({ title, isOpen, children, navigateTo, modalWidth }) => {
     return (
         isOpen && (
             <StyledModal onClick={handleOverlayClick}>
-                <div className="modal" style={{ maxWidth: modalWidth }}>
+                <div
+                    className="modal"
+                    style={{ maxWidth: modalWidth, maxHeight: modalHeight }}
+                >
                     <BtnClose onClick={handleCloseModal} />
                     {children}
                 </div>

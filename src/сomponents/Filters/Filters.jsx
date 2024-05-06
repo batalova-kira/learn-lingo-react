@@ -73,9 +73,9 @@ export const Filters = ({ teachers }) => {
     };
 
     const handleReset = () => {
-        dispatch(setFilterLanguage(""));
-        dispatch(setFilterLevel(""));
-        dispatch(setFilterPrice(""));
+        dispatch(setFilterLanguage(null));
+        dispatch(setFilterLevel(null));
+        dispatch(setFilterPrice(null));
     };
 
     return (
@@ -84,9 +84,13 @@ export const Filters = ({ teachers }) => {
                 <FilterLabel htmlFor="language">Languages</FilterLabel>
                 <Select
                     id="language"
-                    value={languageOptions.find(
-                        (option) => option.value === filterLanguage
-                    )}
+                    value={
+                        filterLanguage
+                            ? languageOptions.find(
+                                  (option) => option.value === filterLanguage
+                              )
+                            : null
+                    }
                     styles={customStyles}
                     onChange={handleLanguageChange}
                     options={languageOptions}
@@ -99,9 +103,13 @@ export const Filters = ({ teachers }) => {
                 </FilterLabel>
                 <Select
                     id="knowledge"
-                    value={levelOptions.find(
-                        (option) => option.value === filterLevel
-                    )}
+                    value={
+                        filterLevel
+                            ? levelOptions.find(
+                                  (option) => option.value === filterLevel
+                              )
+                            : null
+                    }
                     styles={customStyles}
                     onChange={handleLevelChange}
                     options={levelOptions}
@@ -112,9 +120,13 @@ export const Filters = ({ teachers }) => {
                 <FilterLabel htmlFor="price">Price</FilterLabel>
                 <Select
                     id="price"
-                    value={priceOptions.find(
-                        (option) => option.value === filterPrice
-                    )}
+                    value={
+                        filterPrice
+                            ? priceOptions.find(
+                                  (option) => option.value === filterPrice
+                              )
+                            : null
+                    }
                     onChange={handlePriceChange}
                     styles={customStyles}
                     options={priceOptions}
