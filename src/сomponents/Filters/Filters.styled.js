@@ -73,3 +73,29 @@ export const customStyles = {
         cursor: "pointer",
     }),
 };
+
+export const BtnThumb = styled.div`
+    display: flex;
+    align-items: end;
+`;
+
+export const BtnReset = styled.button`
+    display: inline-block;
+    padding: 14px 28px;
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-size: 14px;
+    line-height: 1.56;
+
+    border-radius: 12px;
+
+    color: ${(props) => props.theme.colors.black};
+    background: ${(props) => props.theme.colors.pink};
+
+    height: auto;
+    &:hover {
+        cursor: pointer;
+        background: ${(p) => p.theme.colors.lightPink};
+    }
+`;

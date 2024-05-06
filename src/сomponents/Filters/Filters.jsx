@@ -14,6 +14,8 @@ import {
     setFilterPrice,
 } from "../../../redux/filters/filtersSlice";
 import {
+    BtnReset,
+    BtnThumb,
     FilterLabel,
     FilterThumb,
     FiltersWrapper,
@@ -70,6 +72,12 @@ export const Filters = ({ teachers }) => {
         dispatch(setFilterPrice(selectedOption.value));
     };
 
+    const handleReset = () => {
+        dispatch(setFilterLanguage(""));
+        dispatch(setFilterLevel(""));
+        dispatch(setFilterPrice(""));
+    };
+
     return (
         <FiltersWrapper>
             <FilterThumb>
@@ -113,6 +121,11 @@ export const Filters = ({ teachers }) => {
                     placeholder="Select Price"
                 />
             </FilterThumb>
+            <BtnThumb>
+                <BtnReset type="button" onClick={handleReset}>
+                    Reset
+                </BtnReset>
+            </BtnThumb>
         </FiltersWrapper>
     );
 };
