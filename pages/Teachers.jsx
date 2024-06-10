@@ -26,7 +26,7 @@ const Teachers = () => {
         const unsubscribe = onValue(dbRef, (snapshot) => {
             try {
                 const data = snapshot.val();
-                console.log("Updated data:", data);
+
                 if (data && typeof data === "object") {
                     const teachersArray = Object.values(data);
                     setTeachers(teachersArray);
