@@ -8,7 +8,7 @@ import { Hero } from "../src/сomponents/Hero/Hero";
 
 const RegisterPage = () => {
     const isOpenModal = useSelector(selectIsOpenModal);
-    console.log(isOpenModal);
+
     return (
         <>
             <SignUpModal isOpen={isOpenModal} />
